@@ -5,11 +5,11 @@
 **Docente:** Ing. Liliana Marcela Olarte, M.Sc.
 
 **Equipo:**
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
+- Juan Pablo Zuluaga Galindo
+- Camilo Andrés Salinas Cuervo
+- Daniel Santiago Rincón Santofimio
+- Nicolás Fuentes Ramos
+- Luis Alejandro Sanchez
 
 ## Entregable
 
@@ -41,7 +41,7 @@ Define qué debe hacer HanziApp y con qué atributos de calidad.
 
 ## 3. User story map
 
-![User story map de HanziApp](./assets/story-map-hanziapp.png)
+![User story map de HanziApp](./assets/story-map-hanziapp.pdf)
 
 El backbone tiene 9 actividades ordenadas según el recorrido del usuario y las dependencias entre ellas. Las historias se agrupan en releases:
 
@@ -52,7 +52,6 @@ El backbone tiene 9 actividades ordenadas según el recorrido del usuario y las 
 | Release 3 | Aulas y motivación | Could | 13 |
 | Futuro | Pronunciación | Won't | 1 |
 
-Versión vectorial del mapa: [`assets/story-map-hanziapp.svg`](./assets/story-map-hanziapp.svg).
 
 ## Referencias
 
