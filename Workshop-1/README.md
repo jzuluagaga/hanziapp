@@ -15,12 +15,12 @@
 
 El documento completo está en [`Workshop-1-HanziApp.pdf`](./Workshop-1-HanziApp.pdf).
 
-| Sección | Contenido | Página del PDF |
-|---|---|---|
-| [1. Documentación de requerimientos](#1-documentación-de-requerimientos) | Descripción del producto, roles, reglas de negocio, requerimientos funcionales y no funcionales | pág. X |
-| [2. Historias de usuario](#2-historias-de-usuario) | Historias por épica con criterios de aceptación | pág. X |
-| [3. User story map](#3-user-story-map) | Backbone de actividades, mapa de historias y releases | pág. X |
-| Referencias | Fuentes consultadas | pág. X |
+| Sección | Contenido |
+|---|---|
+| [1. Documentación de requerimientos](#1-documentación-de-requerimientos) | Descripción del producto, roles, reglas de negocio, requerimientos funcionales y no funcionales |
+| [2. Historias de usuario](#2-historias-de-usuario) | Historias por épica con criterios de aceptación |
+| [3. User story map](#3-user-story-map) | Backbone de actividades, mapa de historias y releases |
+| Referencias | Fuentes consultadas |
 
 ## 1. Documentación de requerimientos
 
@@ -41,7 +41,7 @@ Define qué debe hacer HanziApp y con qué atributos de calidad.
 
 ## 3. User story map
 
-![User story map de HanziApp](./assets/story-map-hanziapp.pdf)
+![User story map de HanziApp](./story-map-hanziapp.pdf)
 
 El backbone tiene 9 actividades ordenadas según el recorrido del usuario y las dependencias entre ellas. Las historias se agrupan en releases:
 
