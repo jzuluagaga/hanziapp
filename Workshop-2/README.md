@@ -16,7 +16,7 @@
 
 > Full report (all sections in a single document): [`Workshop2-HanziApp.pdf`](./Workshop2-HanziApp.pdf)
 
-HanziApp is a Spanish-language web application for learning Mandarin vocabulary (HSK levels) using active recall. This workshop documents the system domain, the main classes, the class diagram, the relational database model, and the screen mockups.
+HanziApp is a web application for learning Mandarin vocabulary (HSK levels) using active recall. This workshop documents the system domain, the main classes, the class diagram, the relational database model, and the screen mockups.
 
 ## Contents
 
