@@ -1,4 +1,4 @@
-# Workshop 2 — HanziApp
+# Workshop 2 - HanziApp
 
 | | |
 |---|---|
