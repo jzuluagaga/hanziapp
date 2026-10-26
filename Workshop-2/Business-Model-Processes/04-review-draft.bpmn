@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_review" targetNamespace="https://hanziapp.co/bpmn" exporter="HanziApp docs" exporterVersion="1.0">
+  <bpmn:collaboration id="Collab_review">
+    <bpmn:participant id="Pool_review" name="HanziApp · Review a draft (sub-process of Figure 3)" processRef="Proc_review" />
+  </bpmn:collaboration>
+  <bpmn:process id="Proc_review" name="HanziApp · Review a draft (sub-process of Figure 3)" isExecutable="false">
+    <bpmn:documentation>Review of one AI-generated draft. Approve is enabled only when every validation passes (RN-25.3); rejecting requires a reason (RN-50); both decisions go to the audit log (RN-49).</bpmn:documentation>
+    <bpmn:laneSet id="LaneSet_review">
+      <bpmn:lane id="L4_admin" name="Administrator">
+        <bpmn:flowNodeRef>S4_open</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T4_read</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G4_decision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T4_edit</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T4_reason</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L4_app" name="HanziApp">
+        <bpmn:flowNodeRef>T4_show</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T4_publish</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E4_published</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T4_reject</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E4_rejected</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="S4_open" name="Draft opened">
+      <bpmn:outgoing>Flow_review_0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="T4_show" name="Show the draft with its validation results">
+      <bpmn:incoming>Flow_review_0</bpmn:incoming>
+      <bpmn:incoming>Flow_review_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_1</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="T4_read" name="Review the senses and translations">
+      <bpmn:incoming>Flow_review_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="G4_decision" name="Decision?">
+      <bpmn:incoming>Flow_review_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_3</bpmn:outgoing>
+      <bpmn:outgoing>Flow_review_5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_review_6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="T4_edit" name="Edit the draft">
+      <bpmn:incoming>Flow_review_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="T4_reason" name="Enter the rejection reason">
+      <bpmn:incoming>Flow_review_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="T4_publish" name="Publish it and log the approval">
+      <bpmn:incoming>Flow_review_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="E4_published" name="Content visible to students">
+      <bpmn:incoming>Flow_review_7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="T4_reject" name="Mark it rejected and log the reason">
+      <bpmn:incoming>Flow_review_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_review_9</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="E4_rejected" name="Content rejected">
+      <bpmn:incoming>Flow_review_9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_review_0" sourceRef="S4_open" targetRef="T4_show" />
+    <bpmn:sequenceFlow id="Flow_review_1" sourceRef="T4_show" targetRef="T4_read" />
+    <bpmn:sequenceFlow id="Flow_review_2" sourceRef="T4_read" targetRef="G4_decision" />
+    <bpmn:sequenceFlow id="Flow_review_3" name="edit" sourceRef="G4_decision" targetRef="T4_edit" />
+    <bpmn:sequenceFlow id="Flow_review_4" sourceRef="T4_edit" targetRef="T4_show" />
+    <bpmn:sequenceFlow id="Flow_review_5" name="reject" sourceRef="G4_decision" targetRef="T4_reason" />
+    <bpmn:sequenceFlow id="Flow_review_6" name="approve" sourceRef="G4_decision" targetRef="T4_publish" />
+    <bpmn:sequenceFlow id="Flow_review_7" sourceRef="T4_publish" targetRef="E4_published" />
+    <bpmn:sequenceFlow id="Flow_review_8" sourceRef="T4_reason" targetRef="T4_reject" />
+    <bpmn:sequenceFlow id="Flow_review_9" sourceRef="T4_reject" targetRef="E4_rejected" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diag_review">
+    <bpmndi:BPMNPlane id="Plane_review" bpmnElement="Collab_review">
+      <bpmndi:BPMNShape id="Pool_review_di" bpmnElement="Pool_review" isHorizontal="true"><dc:Bounds x="0" y="0" width="1222" height="440" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L4_admin_di" bpmnElement="L4_admin" isHorizontal="true"><dc:Bounds x="30" y="0" width="1192" height="240" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L4_app_di" bpmnElement="L4_app" isHorizontal="true"><dc:Bounds x="30" y="240" width="1192" height="200" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S4_open_di" bpmnElement="S4_open"><dc:Bounds x="96" y="158" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="64" y="138" width="100" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_show_di" bpmnElement="T4_show"><dc:Bounds x="176" y="268" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_read_di" bpmnElement="T4_read"><dc:Bounds x="360" y="134" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G4_decision_di" bpmnElement="G4_decision"><dc:Bounds x="584" y="151" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="511" y="123" width="96" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_edit_di" bpmnElement="T4_edit"><dc:Bounds x="698" y="24" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_reason_di" bpmnElement="T4_reason"><dc:Bounds x="698" y="134" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_publish_di" bpmnElement="T4_publish"><dc:Bounds x="698" y="268" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E4_published_di" bpmnElement="E4_published"><dc:Bounds x="882" y="292" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="850" y="332" width="100" height="44" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T4_reject_di" bpmnElement="T4_reject"><dc:Bounds x="962" y="348" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E4_rejected_di" bpmnElement="E4_rejected"><dc:Bounds x="1146" y="372" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1114" y="412" width="100" height="30" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_review_0_di" bpmnElement="Flow_review_0"><di:waypoint x="114" y="194" /><di:waypoint x="114" y="310" /><di:waypoint x="176" y="310" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_1_di" bpmnElement="Flow_review_1"><di:waypoint x="316" y="310" /><di:waypoint x="430" y="310" /><di:waypoint x="430" y="218" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_2_di" bpmnElement="Flow_review_2"><di:waypoint x="500" y="176" /><di:waypoint x="584" y="176" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_3_di" bpmnElement="Flow_review_3"><di:waypoint x="609" y="151" /><di:waypoint x="609" y="66" /><di:waypoint x="698" y="66" /><bpmndi:BPMNLabel><dc:Bounds x="614" y="131" width="30" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_4_di" bpmnElement="Flow_review_4"><di:waypoint x="768" y="24" /><di:waypoint x="768" y="13" /><di:waypoint x="246" y="13" /><di:waypoint x="246" y="268" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_5_di" bpmnElement="Flow_review_5"><di:waypoint x="634" y="176" /><di:waypoint x="698" y="176" /><bpmndi:BPMNLabel><dc:Bounds x="642" y="157" width="43" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_6_di" bpmnElement="Flow_review_6"><di:waypoint x="609" y="201" /><di:waypoint x="609" y="310" /><di:waypoint x="698" y="310" /><bpmndi:BPMNLabel><dc:Bounds x="614" y="205" width="49" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_7_di" bpmnElement="Flow_review_7"><di:waypoint x="838" y="310" /><di:waypoint x="882" y="310" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_8_di" bpmnElement="Flow_review_8"><di:waypoint x="838" y="176" /><di:waypoint x="1032" y="176" /><di:waypoint x="1032" y="348" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_review_9_di" bpmnElement="Flow_review_9"><di:waypoint x="1102" y="390" /><di:waypoint x="1146" y="390" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

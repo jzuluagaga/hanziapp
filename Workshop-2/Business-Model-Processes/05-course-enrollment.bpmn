@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_course" targetNamespace="https://hanziapp.co/bpmn" exporter="HanziApp docs" exporterVersion="1.0">
+  <bpmn:collaboration id="Collab_course">
+    <bpmn:participant id="Pool_course" name="HanziApp · Course setup and enrollment" processRef="Proc_course" />
+  </bpmn:collaboration>
+  <bpmn:process id="Proc_course" name="HanziApp · Course setup and enrollment" isExecutable="false">
+    <bpmn:documentation>A teacher creates a course, assigns decks and shares the invitation code; a student enrolls with the code and consent, and from then on studies the course decks while the teacher follows their progress.</bpmn:documentation>
+    <bpmn:laneSet id="LaneSet_course">
+      <bpmn:lane id="L5_teacher" name="Teacher">
+        <bpmn:flowNodeRef>S5_role</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_course</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_decks</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_share</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_follow</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E5_follow</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L5_app" name="HanziApp">
+        <bpmn:flowNodeRef>T5_code</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G5_valid</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E5_refused</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_enroll</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_list</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G5_split</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L5_student" name="Student">
+        <bpmn:flowNodeRef>T5_enter</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T5_study</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E5_study</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="S5_role" name="Teacher role approved">
+      <bpmn:outgoing>Flow_course_0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="T5_course" name="Create the course">
+      <bpmn:incoming>Flow_course_0</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="T5_code" name="Generate the 8-character invitation code">
+      <bpmn:incoming>Flow_course_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="T5_decks" name="Create and assign the course decks">
+      <bpmn:incoming>Flow_course_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="T5_share" name="Share the code with the class">
+      <bpmn:incoming>Flow_course_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="T5_enter" name="Enter the code and consent to share progress">
+      <bpmn:incoming>Flow_course_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="G5_valid" name="Valid code, active course and consent?">
+      <bpmn:incoming>Flow_course_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_6</bpmn:outgoing>
+      <bpmn:outgoing>Flow_course_7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="E5_refused" name="Enrollment refused">
+      <bpmn:incoming>Flow_course_6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="T5_enroll" name="Create the enrollment">
+      <bpmn:incoming>Flow_course_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_8</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="T5_list" name="Add the course as a read-only list">
+      <bpmn:incoming>Flow_course_8</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_9</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:parallelGateway id="G5_split" name="">
+      <bpmn:incoming>Flow_course_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_10</bpmn:outgoing>
+      <bpmn:outgoing>Flow_course_11</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:userTask id="T5_follow" name="Follow the students' progress">
+      <bpmn:incoming>Flow_course_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_12</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="T5_study" name="Study the assigned decks">
+      <bpmn:incoming>Flow_course_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_course_13</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="E5_follow" name="Group progress visible">
+      <bpmn:incoming>Flow_course_12</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="E5_study" name="Student enrolled">
+      <bpmn:incoming>Flow_course_13</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_course_0" sourceRef="S5_role" targetRef="T5_course" />
+    <bpmn:sequenceFlow id="Flow_course_1" sourceRef="T5_course" targetRef="T5_code" />
+    <bpmn:sequenceFlow id="Flow_course_2" sourceRef="T5_code" targetRef="T5_decks" />
+    <bpmn:sequenceFlow id="Flow_course_3" sourceRef="T5_decks" targetRef="T5_share" />
+    <bpmn:sequenceFlow id="Flow_course_4" sourceRef="T5_share" targetRef="T5_enter" />
+    <bpmn:sequenceFlow id="Flow_course_5" sourceRef="T5_enter" targetRef="G5_valid" />
+    <bpmn:sequenceFlow id="Flow_course_6" name="no" sourceRef="G5_valid" targetRef="E5_refused" />
+    <bpmn:sequenceFlow id="Flow_course_7" name="yes" sourceRef="G5_valid" targetRef="T5_enroll" />
+    <bpmn:sequenceFlow id="Flow_course_8" sourceRef="T5_enroll" targetRef="T5_list" />
+    <bpmn:sequenceFlow id="Flow_course_9" sourceRef="T5_list" targetRef="G5_split" />
+    <bpmn:sequenceFlow id="Flow_course_10" sourceRef="G5_split" targetRef="T5_follow" />
+    <bpmn:sequenceFlow id="Flow_course_11" sourceRef="G5_split" targetRef="T5_study" />
+    <bpmn:sequenceFlow id="Flow_course_12" sourceRef="T5_follow" targetRef="E5_follow" />
+    <bpmn:sequenceFlow id="Flow_course_13" sourceRef="T5_study" targetRef="E5_study" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diag_course">
+    <bpmndi:BPMNPlane id="Plane_course" bpmnElement="Collab_course">
+      <bpmndi:BPMNShape id="Pool_course_di" bpmnElement="Pool_course" isHorizontal="true"><dc:Bounds x="0" y="0" width="1728" height="520" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L5_teacher_di" bpmnElement="L5_teacher" isHorizontal="true"><dc:Bounds x="30" y="0" width="1698" height="150" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L5_app_di" bpmnElement="L5_app" isHorizontal="true"><dc:Bounds x="30" y="150" width="1698" height="220" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L5_student_di" bpmnElement="L5_student" isHorizontal="true"><dc:Bounds x="30" y="370" width="1698" height="150" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S5_role_di" bpmnElement="S5_role"><dc:Bounds x="96" y="57" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="64" y="97" width="100" height="30" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_course_di" bpmnElement="T5_course"><dc:Bounds x="176" y="33" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_code_di" bpmnElement="T5_code"><dc:Bounds x="360" y="176" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_decks_di" bpmnElement="T5_decks"><dc:Bounds x="544" y="33" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_share_di" bpmnElement="T5_share"><dc:Bounds x="728" y="33" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_enter_di" bpmnElement="T5_enter"><dc:Bounds x="728" y="403" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G5_valid_di" bpmnElement="G5_valid"><dc:Bounds x="912" y="285" width="50" height="50" /><bpmndi:BPMNLabel><dc:Bounds x="839" y="229" width="96" height="44" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E5_refused_di" bpmnElement="E5_refused"><dc:Bounds x="1058" y="292" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1026" y="332" width="100" height="30" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_enroll_di" bpmnElement="T5_enroll"><dc:Bounds x="1006" y="176" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_list_di" bpmnElement="T5_list"><dc:Bounds x="1190" y="176" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G5_split_di" bpmnElement="G5_split"><dc:Bounds x="1374" y="193" width="50" height="50" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_follow_di" bpmnElement="T5_follow"><dc:Bounds x="1468" y="33" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T5_study_di" bpmnElement="T5_study"><dc:Bounds x="1468" y="403" width="140" height="84" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E5_follow_di" bpmnElement="E5_follow"><dc:Bounds x="1652" y="57" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1620" y="97" width="100" height="30" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E5_study_di" bpmnElement="E5_study"><dc:Bounds x="1652" y="427" width="36" height="36" /><bpmndi:BPMNLabel><dc:Bounds x="1620" y="467" width="100" height="30" /></bpmndi:BPMNLabel></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_course_0_di" bpmnElement="Flow_course_0"><di:waypoint x="132" y="75" /><di:waypoint x="176" y="75" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_1_di" bpmnElement="Flow_course_1"><di:waypoint x="316" y="75" /><di:waypoint x="430" y="75" /><di:waypoint x="430" y="176" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_2_di" bpmnElement="Flow_course_2"><di:waypoint x="500" y="218" /><di:waypoint x="614" y="218" /><di:waypoint x="614" y="117" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_3_di" bpmnElement="Flow_course_3"><di:waypoint x="684" y="75" /><di:waypoint x="728" y="75" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_4_di" bpmnElement="Flow_course_4"><di:waypoint x="798" y="117" /><di:waypoint x="798" y="403" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_5_di" bpmnElement="Flow_course_5"><di:waypoint x="868" y="445" /><di:waypoint x="937" y="445" /><di:waypoint x="937" y="335" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_6_di" bpmnElement="Flow_course_6"><di:waypoint x="962" y="310" /><di:waypoint x="1058" y="310" /><bpmndi:BPMNLabel><dc:Bounds x="970" y="291" width="18" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_7_di" bpmnElement="Flow_course_7"><di:waypoint x="937" y="285" /><di:waypoint x="937" y="218" /><di:waypoint x="1006" y="218" /><bpmndi:BPMNLabel><dc:Bounds x="942" y="265" width="24" height="16" /></bpmndi:BPMNLabel></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_8_di" bpmnElement="Flow_course_8"><di:waypoint x="1146" y="218" /><di:waypoint x="1190" y="218" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_9_di" bpmnElement="Flow_course_9"><di:waypoint x="1330" y="218" /><di:waypoint x="1374" y="218" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_10_di" bpmnElement="Flow_course_10"><di:waypoint x="1399" y="193" /><di:waypoint x="1399" y="75" /><di:waypoint x="1468" y="75" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_11_di" bpmnElement="Flow_course_11"><di:waypoint x="1399" y="243" /><di:waypoint x="1399" y="445" /><di:waypoint x="1468" y="445" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_12_di" bpmnElement="Flow_course_12"><di:waypoint x="1608" y="75" /><di:waypoint x="1652" y="75" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_course_13_di" bpmnElement="Flow_course_13"><di:waypoint x="1608" y="445" /><di:waypoint x="1652" y="445" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
