@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ───────── Tokens de color (normativa HanziApp) ───────── */
+/* .theme-light fija el modo claro en una zona (la landing) aunque el resto use oscuro. */
+:root,
+.theme-light {
+  color-scheme: light;
+  /* Fondos y superficies */
+  --bg: #f9f6f0; /* Crema Arena */
+  --card: #ffffff; /* Blanco Puro */
+  --surface: #f2ede4; /* Beige Cálido */
+  --border: #e6e0d6;
+  /* Marca */
+  --primary: #e84c3d; /* Rojo Coral */
+  --primary-hover: #d13b2d;
+  --amber: #ff9f1c; /* Ámbar */
+  --peach: #ffedd5; /* Durazno Pastel */
+  /* Texto */
+  --ink: #2d2a26; /* Carbón Cálido */
+  --ink-2: #6e685f; /* Gris Topo */
+  --ink-3: #a39d93;
+  /* Feedback */
+  --success: #2a9d8f;
+  --success-soft: #e6f5f3;
+  --hard: #f4a261;
+  --hard-soft: #fef3c7;
+  --error: #d64545;
+  --error-soft: #fdecec;
+  --info: #4a90e2;
+  --info-soft: #ebf3fe;
+  /* Derivados */
+  --on-color: #ffffff;
+  --cloud: rgba(255, 255, 255, 0.92);
+  --shadow: 0 1px 2px rgba(45, 42, 38, 0.04), 0 8px 24px rgba(45, 42, 38, 0.06);
+}
+
+/* Modo oscuro: marca y feedback iguales; fondos suaves derivados del mismo tono. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1c1a17;
+    --card: #26231f;
+    --surface: #322e29;
+    --border: #3d3832;
+    --ink: #f5f2eb;
+    --ink-2: #a8a298;
+    --ink-3: #7c766c;
+    --peach: color-mix(in srgb, #ff9f1c 16%, #26231f);
+    --success-soft: color-mix(in srgb, #2a9d8f 18%, #26231f);
+    --hard-soft: color-mix(in srgb, #f4a261 18%, #26231f);
+    --error-soft: color-mix(in srgb, #d64545 18%, #26231f);
+    --info-soft: color-mix(in srgb, #4a90e2 18%, #26231f);
+    --cloud: rgba(255, 255, 255, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1c1a17;
+  --card: #26231f;
+  --surface: #322e29;
+  --border: #3d3832;
+  --ink: #f5f2eb;
+  --ink-2: #a8a298;
+  --ink-3: #7c766c;
+  --peach: color-mix(in srgb, #ff9f1c 16%, #26231f);
+  --success-soft: color-mix(in srgb, #2a9d8f 18%, #26231f);
+  --hard-soft: color-mix(in srgb, #f4a261 18%, #26231f);
+  --error-soft: color-mix(in srgb, #d64545 18%, #26231f);
+  --info-soft: color-mix(in srgb, #4a90e2 18%, #26231f);
+  --cloud: rgba(255, 255, 255, 0.14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-amber: var(--amber);
+  --color-peach: var(--peach);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-hard: var(--hard);
+  --color-hard-soft: var(--hard-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-on-color: var(--on-color);
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+  --font-hanzi: var(--font-noto-sc), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --shadow-soft: var(--shadow);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* La landing solo existe en modo claro: también el fondo al estirar la página. */
+:root:has(.theme-light),
+:root:has(.theme-light) body {
+  color-scheme: light;
+  background: #f9f6f0;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-hanzi {
+  font-family: var(--font-hanzi);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--info) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* Curva de contenido sobre el encabezado de color (estilo Headspace). */
+.dome {
+  border-top-left-radius: 50% 40px;
+  border-top-right-radius: 50% 40px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.35s ease-out both;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animate-pop {
+  animation: pop 0.4s ease-out both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-pop,
+  .animate-float {
+    animation: none;
+  }
+}

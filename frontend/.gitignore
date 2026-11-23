@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+
+# Capturas de terceros usadas como guía de estilo: no se publican
+IMGS_GUIA/
+.env
