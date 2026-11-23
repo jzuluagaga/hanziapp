@@ -25,7 +25,9 @@ export function toWord(w: ApiWord, lang: string): Word {
 }
 
 export const toScope = (s: ApiScope): SessionScope =>
-  s.type === "deck" ? { type: "deck", deckId: String(s.deck_id), level: s.level, index: s.index } : { type: "all_due" };
+  s.type === "deck"
+    ? { type: "deck", deckId: String(s.deck_id), level: s.level, index: s.index, themeKeys: s.theme_keys, part: s.part }
+    : { type: "all_due" };
 
 export const toCard = (c: ApiCard): SessionCard => ({
   position: c.position,

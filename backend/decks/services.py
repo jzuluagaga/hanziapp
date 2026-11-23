@@ -10,9 +10,40 @@ from ops import params
 from .models import Deck, DeckWord
 
 
+def _themed_plan(level: int, ids: list[int]):
+    """Plan por tema si todas las palabras vigentes del nivel tienen su subtema aprobado; si no, None."""
+    from content.models import WordTheme
+    from content.services.themes import taxonomy
+
+    from .themed import plan_level
+
+    approved = dict(WordTheme.objects.filter(word_id__in=ids, status=WordTheme.Status.APPROVED)
+                    .values_list("word_id", "subtheme"))
+    if not ids or len(approved) < len(ids):
+        return None
+    by_sub: dict[str, list[int]] = {}
+    for wid in ids:  # ids ya va en el orden del sílabo
+        by_sub.setdefault(approved[wid], []).append(wid)
+    return plan_level(taxonomy(), by_sub, int(params.per_level("system_deck_size", level)))
+
+
+def _save_deck(level: int, index: int, word_ids: list[int], theme_keys: list[str], part) -> None:
+    deck, _ = Deck.objects.get_or_create(kind=Deck.Kind.SYSTEM, hsk_level=level, index=index)
+    fields = {"retired_at": None, "theme_keys": theme_keys, "part": part}
+    if any(getattr(deck, k) != v for k, v in fields.items()):
+        for k, v in fields.items():
+            setattr(deck, k, v)
+        deck.save(update_fields=list(fields))
+    current = list(deck.entries.order_by("position").values_list("word_id", flat=True))
+    if current != word_ids:
+        deck.entries.all().delete()
+        DeckWord.objects.bulk_create([DeckWord(deck=deck, word_id=w, position=i) for i, w in enumerate(word_ids)])
+
+
 @transaction.atomic
 def build_system_decks(levels=None) -> dict[int, int]:
-    """Parte cada nivel en tramos de `system_deck_size` palabras vigentes, en el orden del sílabo.
+    """Arma los mazos del sistema de cada nivel: por tema si el nivel tiene todos sus temas
+    aprobados (D-49); si no, en tramos de `system_deck_size` en el orden del sílabo (D-43).
     Repetible: conserva el identificador de cada mazo (nivel, índice) y retira los que sobran.
     Devuelve {nivel: número de mazos}."""
     levels = levels or range(1, 7)
@@ -21,16 +52,15 @@ def build_system_decks(levels=None) -> dict[int, int]:
         size = int(params.per_level("system_deck_size", level))
         ids = list(Word.objects.filter(hsk_level=level, retired_at__isnull=True)
                    .order_by("syllabus_order").values_list("pk", flat=True))
-        chunks = [ids[i:i + size] for i in range(0, len(ids), size)]
-        for index, chunk in enumerate(chunks, start=1):
-            deck, _ = Deck.objects.get_or_create(kind=Deck.Kind.SYSTEM, hsk_level=level, index=index)
-            if deck.retired_at:
-                deck.retired_at = None
-                deck.save(update_fields=["retired_at"])
-            current = list(deck.entries.order_by("position").values_list("word_id", flat=True))
-            if current != chunk:
-                deck.entries.all().delete()
-                DeckWord.objects.bulk_create([DeckWord(deck=deck, word_id=w, position=i) for i, w in enumerate(chunk)])
+        plan = _themed_plan(level, ids)
+        if plan is not None:  # D-49: mazos por tema
+            chunks = [g.words for g in plan]
+            for index, g in enumerate(plan, start=1):
+                _save_deck(level, index, g.words, g.keys, g.part)
+        else:  # D-43: tramos en el orden del sílabo mientras el nivel no tenga sus temas aprobados
+            chunks = [ids[i:i + size] for i in range(0, len(ids), size)]
+            for index, chunk in enumerate(chunks, start=1):
+                _save_deck(level, index, chunk, [], None)
         extra = Deck.objects.filter(kind=Deck.Kind.SYSTEM, hsk_level=level, index__gt=len(chunks))
         DeckWord.objects.filter(deck__in=extra).delete()
         extra.filter(retired_at__isnull=True).update(retired_at=timezone.now())

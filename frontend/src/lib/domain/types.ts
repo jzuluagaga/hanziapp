@@ -39,7 +39,7 @@ export interface Word {
 
 export type DayStatus = "active" | "exempt" | "missed";
 
-export type SessionScope = { type: "deck"; deckId: string; level?: number; index?: number } | { type: "all_due" };
+export type SessionScope = { type: "deck"; deckId: string; level?: number; index?: number; themeKeys?: string[]; part?: number | null } | { type: "all_due" };
 
 export interface SessionCard {
   position: number;

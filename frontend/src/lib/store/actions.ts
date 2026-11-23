@@ -225,7 +225,10 @@ export interface SessionInfo {
 
 export const toInfo = (s: SessionSummaryApi): SessionInfo => ({
   id: s.id,
-  scope: s.scope.type === "deck" ? { type: "deck", deckId: String(s.scope.deck_id), level: s.scope.level, index: s.scope.index } : { type: "all_due" },
+  scope:
+    s.scope.type === "deck"
+      ? { type: "deck", deckId: String(s.scope.deck_id), level: s.scope.level, index: s.scope.index, themeKeys: s.scope.theme_keys, part: s.scope.part }
+      : { type: "all_due" },
   skill: s.skill,
   done: s.done,
   total: s.total,

@@ -35,6 +35,8 @@ export interface ApiScope {
   deck_id?: string;
   level?: number;
   index?: number;
+  theme_keys?: string[];
+  part?: number | null;
 }
 
 export interface SessionSummaryApi {
@@ -55,7 +57,7 @@ export interface Today {
   counts: Counts;
   active_sessions: SessionSummaryApi[];
   streak: { current: number; max: number; today_active: boolean };
-  recent_decks: { id: string; level: HskLevel; index: number; sample: string; recognition: { due: number; new: number } }[];
+  recent_decks: { id: string; level: HskLevel; index: number; theme_keys: string[]; part: number | null; sample: string; recognition: { due: number; new: number } }[];
   days: { day: string; status: DayStatus }[];
 }
 
@@ -116,6 +118,8 @@ export interface DeckInfo {
   kind: "system" | "own";
   level: HskLevel;
   index: number;
+  theme_keys: string[];
+  part: number | null;
   size: number;
   published: number;
   locked: boolean;

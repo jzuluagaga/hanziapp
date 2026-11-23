@@ -15,6 +15,7 @@
 | 3 | Dado un mazo, cuando lo ve, entonces aparecen cuántas palabras tiene, cuántas nuevas, cuántas pendientes y cuántas en revisión | `test_e08_01_deck_counts` |
 | 4 | Dado un nivel con contenido a medias, cuando ve la lista de niveles, entonces aparece con las publicadas sobre el total del sílabo | `test_e08_01_level_shows_published_over_total` |
 | 5 | Dado un nivel fuera del plan, cuando lo ve, entonces aparece bloqueado con el plan que lo desbloquea, sin ocultarlo | `test_e08_01_locked_levels_show_unlocking_plan` |
+| 6 | Dado un nivel con todos sus temas aprobados, cuando se arman los mazos, entonces quedan por tema con la regla de tamaño de D-49, ningún mazo con menos de 8 palabras, y mientras falte alguna aprobación se usa el orden del sílabo | `test_e08_01_system_decks_by_theme` |
 
 - **Derechos:** consulta `study.level.N`; quien no lo tiene ve el nivel bloqueado.
 - **Idioma:** los mazos y niveles se nombran por clave (`decks.deckFull`); las cuentas dependen del idioma de estudio.

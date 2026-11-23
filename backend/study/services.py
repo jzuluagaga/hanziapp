@@ -58,7 +58,8 @@ def session_summary(session: StudySession) -> dict:
 def _scope(session):
     if not session.deck_id:
         return {"type": "all_due"}
-    return {"type": "deck", "deck_id": str(session.deck_id), "level": session.deck.hsk_level, "index": session.deck.index}
+    d = session.deck
+    return {"type": "deck", "deck_id": str(d.pk), "level": d.hsk_level, "index": d.index, "theme_keys": d.theme_keys, "part": d.part}
 
 
 def session_payload(session: StudySession) -> dict:
@@ -336,7 +337,8 @@ def recent_decks(account, n: int = 6) -> list[dict]:
     for deck in Deck.objects.filter(pk__in=seen, retired_at__isnull=True):
         ids = deck_word_ids(deck)
         first = Word.objects.filter(pk=ids[0]).values_list("hanzi", flat=True).first() if ids else ""
-        out.append({"id": str(deck.pk), "level": deck.hsk_level, "index": deck.index, "sample": (first or "")[:1],
+        out.append({"id": str(deck.pk), "level": deck.hsk_level, "index": deck.index, "theme_keys": deck.theme_keys,
+                    "part": deck.part, "sample": (first or "")[:1],
                     "recognition": counts(account, "recognition", deck)})
     return sorted(out, key=lambda d: seen.index(int(d["id"])))
 

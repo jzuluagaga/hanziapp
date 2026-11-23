@@ -3,7 +3,7 @@
 import { ChevronRight, Lightbulb, Play, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import { CurvedPage, levelColor } from "@/components/layout/curved-header";
-import { SKILLS, SkillIcon, scopeLabel, skillTone, studyHref } from "@/components/study/skill-meta";
+import { SKILLS, SkillIcon, deckLabel, scopeLabel, skillTone, studyHref } from "@/components/study/skill-meta";
 import { StreakCard } from "@/components/study/streak-card";
 import { ButtonLink } from "@/components/ui/button";
 import { Mascot } from "@/components/ui/mascot";
@@ -173,7 +173,7 @@ export default function TodayPage() {
                   {d.sample}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-extrabold">{t("decks.deckFull", { level: d.level, index: d.index })}</span>
+                  <span className="block truncate text-sm font-extrabold">{deckLabel(t, { level: d.level, index: d.index, themeKeys: d.theme_keys, part: d.part }, true)}</span>
                   <span className="block truncate text-xs font-semibold text-ink-2">{t("deck.counts", { due: d.recognition.due, fresh: d.recognition.new })}</span>
                 </span>
                 <ChevronRight className="size-4 text-ink-3" aria-hidden />

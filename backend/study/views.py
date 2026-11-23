@@ -49,7 +49,8 @@ def deck_payload(deck: Deck, account, allowed: set[int], lang: str) -> dict:
         for s in SKILLS:
             c = queue.candidates(account, s, deck, apply_limit=False)
             counts[s] = {"due": len(c.due), "new": len(c.fresh)}
-    return {"id": str(deck.pk), "kind": deck.kind, "level": deck.hsk_level, "index": deck.index, "size": len(ids),
+    return {"id": str(deck.pk), "kind": deck.kind, "level": deck.hsk_level, "index": deck.index,
+            "theme_keys": deck.theme_keys, "part": deck.part, "size": len(ids),
             "published": len(published_word_ids(lang, ids)), "locked": locked,
             "unlocking_plan": unlocking_plan(deck.hsk_level) if locked else None, "counts": counts}
 

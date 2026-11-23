@@ -20,6 +20,9 @@ class Deck(models.Model):
     index = models.PositiveSmallIntegerField(null=True, blank=True, help_text="1, 2, 3… dentro del nivel.")
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.CASCADE, related_name="own_decks")
     name = models.CharField(max_length=60, blank=True, help_text="Solo mazos propios (V2).")
+    theme_keys = models.JSONField(default=list, blank=True,
+                                  help_text="Claves de tema o subtema que contiene (D-49); la interfaz une sus nombres.")
+    part = models.PositiveSmallIntegerField(null=True, blank=True, help_text="Parte n cuando un grupo se divide.")
     retired_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

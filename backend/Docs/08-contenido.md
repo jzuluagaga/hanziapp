@@ -121,13 +121,13 @@ Hoy cada nivel se divide en tramos de `system_deck_size` palabras en el orden de
 
 | Caso | Qué se hace | Nombre del mazo |
 |---|---|---|
-| El tema entero cabe en la banda o por debajo, con 8 palabras o más | Un mazo con todo el tema | El del tema |
-| El tema supera 1,5 T | Se divide por subtemas | El del subtema |
-| Un subtema queda por debajo de 0,5 T | Se junta con su vecino del mismo tema | "Subtema A · Subtema B"; si cubren todo el tema, el del tema; con tres o más, "Tema · Parte n" |
-| Un subtema supera 1,5 T | Se parte en tramos iguales | "Subtema · Parte n" |
-| Un tema tiene menos de 8 palabras en el nivel | Se junta con el tema siguiente en el orden | "Tema A · Tema B" |
+| El tema entero cabe en 1,5 T y tiene 8 palabras o más | Un mazo con todo el tema | El del tema |
+| El tema supera 1,5 T | Se divide por subtemas: primero se parten los mayores de 1,5 T y después cada grupo menor de 0,5 T se junta con el vecino que dé el grupo más pequeño | El de sus subtemas ("Subtema A · Subtema B") |
+| Al dividir, un subtema queda repartido entre mazos o un mazo junta tres o más subtemas | Igual que arriba | Todos los mazos del tema se llaman "Tema · Parte n" |
+| Un tema tiene menos de 8 palabras en el nivel | Se junta con el tema siguiente en el orden (o el anterior, si es el último) | "Tema A · Tema B" |
+| El nivel no tiene todos sus temas aprobados | Tramos de `system_deck_size` en el orden del sílabo | "Mazo n" |
 
-El mazo guarda las claves que contiene y la interfaz une sus traducciones: no hay claves nuevas por fusión. Dentro de cada mazo, las palabras van por utilidad y después en el orden del sílabo. Rehacer los mazos no toca el progreso, que pertenece a la palabra, pero cambia los mazos que el estudiante conocía: por eso la asignación se cierra antes de publicar un nivel.
+Ningún mazo queda con menos de 8 palabras. El mazo guarda las claves que contiene y la interfaz une sus traducciones: no hay claves nuevas por fusión. Dentro de cada mazo, las palabras van en el orden del sílabo. Se arma con `build_system_decks`; con los temas aprobados de HSK 1 y 2 salen 14 y 11 mazos. Rehacer los mazos no toca el progreso, que pertenece a la palabra, pero cambia los mazos que el estudiante conocía: por eso la asignación se cierra antes de publicar un nivel.
 
 ## 8. Añadir un idioma de estudio
 

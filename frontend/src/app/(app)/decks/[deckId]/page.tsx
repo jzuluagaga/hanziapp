@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { CurvedPage, levelVariant } from "@/components/layout/curved-header";
-import { SKILLS, SkillIcon, skillTone, studyHref } from "@/components/study/skill-meta";
+import { SKILLS, SkillIcon, deckLabel, skillTone, studyHref } from "@/components/study/skill-meta";
 import { Badge, Container, SectionTitle } from "@/components/ui/primitives";
 import { Splash } from "@/components/layout/auth-gate";
 import { useT } from "@/lib/i18n";
@@ -44,7 +44,7 @@ export default function DeckPage() {
           </Link>
           <div className="pb-2 pt-3 text-center">
             <p className="text-sm font-bold text-white/85">{t("common.level", { level: deck.level })}</p>
-            <h1 className="text-3xl font-black">{t("decks.deckName", { index: deck.index })}</h1>
+            <h1 className="text-3xl font-black">{deckLabel(t, { index: deck.index, themeKeys: deck.theme_keys, part: deck.part })}</h1>
             <p className="mt-1 font-semibold text-white/90">{tp("common.words", deck.size)}</p>
           </div>
         </div>

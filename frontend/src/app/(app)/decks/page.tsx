@@ -8,6 +8,7 @@ import { CurvedPage, levelColor } from "@/components/layout/curved-header";
 import { Mascot } from "@/components/ui/mascot";
 import { Badge, ProgressBar } from "@/components/ui/primitives";
 import { ButtonLink } from "@/components/ui/button";
+import { deckLabel } from "@/components/study/skill-meta";
 import type { HskLevel } from "@/lib/domain/types";
 import { useT } from "@/lib/i18n";
 import { loadDecks, loadLevels, loadProgress } from "@/lib/store/actions";
@@ -110,7 +111,7 @@ function Decks() {
                   {d.locked ? <Lock className="size-6" aria-hidden /> : d.index}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block font-extrabold">{t("decks.deckName", { index: d.index })}</span>
+                  <span className="block font-extrabold">{deckLabel(t, { index: d.index, themeKeys: d.theme_keys, part: d.part })}</span>
                   <span className="block text-sm font-semibold text-ink-2">{tp("common.words", d.size)}</span>
                   <span className="mt-1.5 flex flex-wrap gap-1.5">
                     {c.due > 0 && <Badge tone="hard">{t("decks.meta.due", { count: c.due })}</Badge>}

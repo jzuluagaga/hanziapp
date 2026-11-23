@@ -74,7 +74,7 @@ GET /me
 | Método y ruta | Devuelve |
 |---|---|
 | `GET /levels` | `[{level, total, published, locked, unlocking_plan, decks}]` (`R-CON-16`, `R-DER-11`) |
-| `GET /decks?level=N` | `[{id, kind, level, index, size, published, locked, unlocking_plan, counts}]` |
+| `GET /decks?level=N` | `[{id, kind, level, index, theme_keys, part, size, published, locked, unlocking_plan, counts}]`. El nombre del mazo lo arma la interfaz: los nombres de `theme_keys` unidos por " · " y "Parte n" si hay `part`; sin `theme_keys`, "HSK N · Parte index" (D-49) |
 | `GET /decks/<id>` | `{deck, words: [{id, hanzi, pinyin, meaning, editorial, badge}]}`. Emite `deck_viewed` |
 | `GET /words?level=N` | `[{id, hanzi, pinyin, level, meaning, editorial}]` de todo el nivel, en el orden del sílabo |
 | `GET /words/search?q=` | `[{id, hanzi, pinyin, level, meaning, editorial}]`, máximo 50. Emite `search_performed` sin el texto (`R-IDI-07`) |

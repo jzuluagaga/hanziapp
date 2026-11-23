@@ -13,9 +13,24 @@ export const skillTone: Record<Skill, { soft: string; strong: string; text: stri
   writing: { soft: "bg-success-soft", strong: "bg-success", text: "text-success" },
 };
 
-export function scopeLabel(scope: SessionScope, t: ReturnType<typeof makeT>["t"]) {
+type T = ReturnType<typeof makeT>["t"];
+
+/**
+ * Nombre de un mazo del sistema (D-49): los nombres de sus temas unidos por " · " y "Parte n"
+ * si la tiene. Un mazo sin temas (nivel aún sin aprobar) se llama por número: "Parte 3".
+ * Con `withLevel`, antepone el nivel: "HSK 1 · Comida y bebida".
+ */
+export function deckLabel(t: T, d: { level?: number; index?: number; themeKeys?: string[]; part?: number | null }, withLevel = false) {
+  const keys = d.themeKeys ?? [];
+  const name = keys.length
+    ? [...keys.map((k) => t(`theme.${k}` as "theme.food_drink")), ...(d.part ? [t("decks.part", { n: d.part })] : [])].join(" · ")
+    : t("decks.deckName", { index: d.index ?? 0 });
+  return withLevel && d.level ? `${t("common.level", { level: d.level })} · ${name}` : name;
+}
+
+export function scopeLabel(scope: SessionScope, t: T) {
   if (scope.type === "all_due") return t("today.allDueScope");
-  return scope.level && scope.index ? t("decks.deckFull", { level: scope.level, index: scope.index }) : "";
+  return deckLabel(t, scope, true);
 }
 
 export function scopeParam(scope: SessionScope) {
