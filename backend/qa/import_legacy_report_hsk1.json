@@ -1,0 +1,365 @@
+{
+  "pinyin_diferente": [
+    {
+      "word": "百",
+      "zh": "操场上有上百名学生。",
+      "revisado": "cāo chǎng shàng yǒu shàng bǎi míng xué sheng。",
+      "tuberia": "cāo chǎng shàng yǒu shàng bǎi míng xué shēng."
+    },
+    {
+      "word": "半",
+      "zh": "他半睁着眼睛看着我。",
+      "revisado": "tā bàn zhēng zhe yǎn jīng kàn zhe wǒ。",
+      "tuberia": "tā bàn zhēng zhe yǎn jing kàn zhe wǒ."
+    },
+    {
+      "word": "边",
+      "zh": "你坐在我左边。",
+      "revisado": "nǐ zuò zài wǒ zuǒ biān。",
+      "tuberia": "nǐ zuò zài wǒ zuǒ bian."
+    },
+    {
+      "word": "边",
+      "zh": "前边有一个公园。",
+      "revisado": "qián biān yǒu yí gè gōng yuán。",
+      "tuberia": "qián bian yǒu yí gè gōng yuán."
+    },
+    {
+      "word": "边",
+      "zh": "猫躲在桌子下边。",
+      "revisado": "māo duǒ zài zhuō zi xià biān。",
+      "tuberia": "māo duǒ zài zhuō zi xià bian."
+    },
+    {
+      "word": "出租车",
+      "zh": "街上有很多出租车。",
+      "revisado": "jiē shàng yǒu hěn duō chū zū chē。",
+      "tuberia": "jiē shang yǒu hěn duō chū zū chē."
+    },
+    {
+      "word": "大",
+      "zh": "他的力气很大。",
+      "revisado": "tā de lì qì hěn dà。",
+      "tuberia": "tā de lì qi hěn dà."
+    },
+    {
+      "word": "第",
+      "zh": "这是我第一次来北京。",
+      "revisado": "zhè shì wǒ dì yí cì lái běi jīng。",
+      "tuberia": "zhè shì wǒ dì yī cì lái běi jīng."
+    },
+    {
+      "word": "都",
+      "zh": "我们都是学生。",
+      "revisado": "wǒ men dōu shì xué sheng。",
+      "tuberia": "wǒ men dōu shì xué shēng."
+    },
+    {
+      "word": "对",
+      "zh": "老师对学生很耐心。",
+      "revisado": "lǎo shī duì xué sheng hěn nài xīn。",
+      "tuberia": "lǎo shī duì xué shēng hěn nài xīn."
+    },
+    {
+      "word": "对不起",
+      "zh": "对不起，我来晚了。",
+      "revisado": "duì bù qǐ , wǒ lái wǎn le。",
+      "tuberia": "duì bu qǐ, wǒ lái wǎn le."
+    },
+    {
+      "word": "对不起",
+      "zh": "对不起，我不是故意的。",
+      "revisado": "duì bù qǐ , wǒ bú shì gù yì de。",
+      "tuberia": "duì bu qǐ, wǒ bú shì gù yì de."
+    },
+    {
+      "word": "对不起",
+      "zh": "对不起，打扰你一下。",
+      "revisado": "duì bù qǐ , dǎ rǎo nǐ yí xià。",
+      "tuberia": "duì bu qǐ, dǎ rǎo nǐ yí xià."
+    },
+    {
+      "word": "多",
+      "zh": "他的班里多五个学生。",
+      "revisado": "tā de bān lǐ duō wǔ gè xué sheng。",
+      "tuberia": "tā de bān lǐ duō wǔ gè xué shēng."
+    },
+    {
+      "word": "多",
+      "zh": "这个班有二十多个学生。",
+      "revisado": "zhè ge bān yǒu èr shí duō gè xué sheng。",
+      "tuberia": "zhè ge bān yǒu èr shí duō gè xué shēng."
+    },
+    {
+      "word": "多少",
+      "zh": "你们班有多少学生？",
+      "revisado": "nǐ men bān yǒu duō shao xué sheng ?",
+      "tuberia": "nǐ men bān yǒu duō shao xué shēng?"
+    },
+    {
+      "word": "房间",
+      "zh": "请打开房间的窗户。",
+      "revisado": "qǐng dǎ kāi fáng jiān de chuāng hù。",
+      "tuberia": "qǐng dǎ kāi fáng jiān de chuāng hu."
+    },
+    {
+      "word": "分",
+      "zh": "老师把学生分成两组。",
+      "revisado": "lǎo shī bǎ xué sheng fēn chéng liǎng zǔ。",
+      "tuberia": "lǎo shī bǎ xué shēng fēn chéng liǎng zǔ."
+    },
+    {
+      "word": "高兴",
+      "zh": "她听到消息很高兴。",
+      "revisado": "tā tīng dào xiāo xī hěn gāo xìng。",
+      "tuberia": "tā tīng dào xiāo xi hěn gāo xìng."
+    },
+    {
+      "word": "孩子",
+      "zh": "这个孩子很聪明。",
+      "revisado": "zhè ge hái zi hěn cōng míng。",
+      "tuberia": "zhè ge hái zi hěn cōng ming."
+    },
+    {
+      "word": "好看",
+      "zh": "她今天打扮得很好看。",
+      "revisado": "tā jīn tiān dǎ bàn de hěn hǎo kàn。",
+      "tuberia": "tā jīn tiān dǎ ban de hěn hǎo kàn."
+    },
+    {
+      "word": "很",
+      "zh": "她很聪明。",
+      "revisado": "tā hěn cōng míng。",
+      "tuberia": "tā hěn cōng ming."
+    },
+    {
+      "word": "回",
+      "zh": "你什么时候回来？",
+      "revisado": "nǐ shén me shí hou huí lái ?",
+      "tuberia": "nǐ shén me shí hou huí lai?"
+    },
+    {
+      "word": "家",
+      "zh": "这条街上有三家餐厅。",
+      "revisado": "zhè tiáo jiē shàng yǒu sān jiā cān tīng。",
+      "tuberia": "zhè tiáo jiē shang yǒu sān jiā cān tīng."
+    },
+    {
+      "word": "见",
+      "zh": "我在路上见到他了。",
+      "revisado": "wǒ zài lù shàng jiàn dào tā le。",
+      "tuberia": "wǒ zài lù shang jiàn dào tā le."
+    },
+    {
+      "word": "件",
+      "zh": "桌子上有三件行李。",
+      "revisado": "zhuō zi shàng yǒu sān jiàn xíng lǐ。",
+      "tuberia": "zhuō zi shàng yǒu sān jiàn xíng li."
+    },
+    {
+      "word": "觉得",
+      "zh": "我觉得这个主意不错。",
+      "revisado": "wǒ jué de zhè ge zhǔ yì bú cuò。",
+      "tuberia": "wǒ jué de zhè ge zhǔ yi bú cuò."
+    },
+    {
+      "word": "开",
+      "zh": "窗户开着呢。",
+      "revisado": "chuāng hù kāi zhe ne。",
+      "tuberia": "chuāng hu kāi zhe ne."
+    },
+    {
+      "word": "可以",
+      "zh": "味道还可以。",
+      "revisado": "wèi dào hái kě yǐ。",
+      "tuberia": "wèi dao hái kě yǐ."
+    },
+    {
+      "word": "口",
+      "zh": "张开口，让医生看看。",
+      "revisado": "zhāng kāi kǒu , ràng yī shēng kàn kàn。",
+      "tuberia": "zhāng kāi kǒu, ràng yī shēng kàn kan."
+    },
+    {
+      "word": "吗",
+      "zh": "你是学生吗？",
+      "revisado": "nǐ shì xué sheng ma ?",
+      "tuberia": "nǐ shì xué shēng ma?"
+    },
+    {
+      "word": "没关系",
+      "zh": "对不起！没关系。",
+      "revisado": "duì bù qǐ ! méi guān xi。",
+      "tuberia": "duì bu qǐ! méi guān xi."
+    },
+    {
+      "word": "没事",
+      "zh": "对不起！——没事。",
+      "revisado": "duì bù qǐ！ — méi shì。",
+      "tuberia": "duì bu qǐ!-- méi shì."
+    },
+    {
+      "word": "那",
+      "zh": "这个太贵，那我们看看别的。",
+      "revisado": "zhè ge tài guì， nà wǒ men kàn kàn bié de。",
+      "tuberia": "zhè ge tài guì, nà wǒ men kàn kan bié de."
+    },
+    {
+      "word": "那边",
+      "zh": "你去那边看看。",
+      "revisado": "nǐ qù nà biān kàn kàn。",
+      "tuberia": "nǐ qù nà biān kàn kan."
+    },
+    {
+      "word": "你",
+      "zh": "你是学生吗？",
+      "revisado": "nǐ shì xué sheng ma ?",
+      "tuberia": "nǐ shì xué shēng ma?"
+    },
+    {
+      "word": "女",
+      "zh": "这所学校有很多女学生。",
+      "revisado": "zhè suǒ xué xiào yǒu hěn duō nǚ xué sheng。",
+      "tuberia": "zhè suǒ xué xiào yǒu hěn duō nǚ xué shēng."
+    },
+    {
+      "word": "女儿",
+      "zh": "他们的女儿很聪明。",
+      "revisado": "tā men de nǚ ér hěn cōng míng。",
+      "tuberia": "tā men de nǚ ér hěn cōng ming."
+    },
+    {
+      "word": "千",
+      "zh": "操场上有一千个学生。",
+      "revisado": "cāo chǎng shàng yǒu yì qiān gè xué sheng。",
+      "tuberia": "cāo chǎng shàng yǒu yì qiān gè xué shēng."
+    },
+    {
+      "word": "人",
+      "zh": "街上的人很多。",
+      "revisado": "jiē shàng de rén hěn duō。",
+      "tuberia": "jiē shang de rén hěn duō."
+    },
+    {
+      "word": "是",
+      "zh": "我是学生。",
+      "revisado": "wǒ shì xué sheng。",
+      "tuberia": "wǒ shì xué shēng."
+    },
+    {
+      "word": "外边",
+      "zh": "外边下雨了。",
+      "revisado": "wài biān xià yǔ le。",
+      "tuberia": "wài bian xià yǔ le."
+    },
+    {
+      "word": "外边",
+      "zh": "孩子们在外边玩。",
+      "revisado": "hái zi men zài wài biān wán。",
+      "tuberia": "hái zi men zài wài bian wán."
+    },
+    {
+      "word": "外边",
+      "zh": "外边很冷，穿件外套吧。",
+      "revisado": "wài biān hěn lěng , chuān jiàn wài tào ba。",
+      "tuberia": "wài bian hěn lěng, chuān jiàn wài tào ba."
+    },
+    {
+      "word": "我",
+      "zh": "我是学生。",
+      "revisado": "wǒ shì xué sheng。",
+      "tuberia": "wǒ shì xué shēng."
+    },
+    {
+      "word": "我们",
+      "zh": "我们是学生。",
+      "revisado": "wǒ men shì xué sheng。",
+      "tuberia": "wǒ men shì xué shēng."
+    },
+    {
+      "word": "小朋友",
+      "zh": "这个小朋友几岁了？",
+      "revisado": "zhè ge xiǎo péng you jǐ suì le？",
+      "tuberia": "zhè ge xiǎo péng yǒu jǐ suì le?"
+    },
+    {
+      "word": "小朋友",
+      "zh": "小朋友们在公园里玩。",
+      "revisado": "xiǎo péng you men zài gōng yuán lǐ wán。",
+      "tuberia": "xiǎo péng yǒu men zài gōng yuán lǐ wán."
+    },
+    {
+      "word": "小朋友",
+      "zh": "小朋友，你叫什么名字？",
+      "revisado": "xiǎo péng you , nǐ jiào shén me míng zi？",
+      "tuberia": "xiǎo péng yǒu, nǐ jiào shén me míng zi?"
+    },
+    {
+      "word": "些",
+      "zh": "这些学生很聪明。",
+      "revisado": "zhè xiē xué sheng hěn cōng míng。",
+      "tuberia": "zhè xiē xué shēng hěn cōng ming."
+    },
+    {
+      "word": "学生",
+      "zh": "这个学生很聪明。",
+      "revisado": "zhè ge xué sheng hěn cōng míng。",
+      "tuberia": "zhè ge xué shēng hěn cōng ming."
+    },
+    {
+      "word": "学生",
+      "zh": "学生们正在教室里上课。",
+      "revisado": "xué sheng men zhèng zài jiào shì lǐ shàng kè。",
+      "tuberia": "xué shēng men zhèng zài jiào shì lǐ shàng kè."
+    },
+    {
+      "word": "学习",
+      "zh": "你应该多学习新知识。",
+      "revisado": "nǐ yīng gāi duō xué xí xīn zhī shí。",
+      "tuberia": "nǐ yīng gāi duō xué xí xīn zhī shi."
+    },
+    {
+      "word": "一半",
+      "zh": "教室里一半的学生都去了图书馆。",
+      "revisado": "jiào shì lǐ yí bàn de xué sheng dōu qù le tú shū guǎn。",
+      "tuberia": "jiào shì lǐ yí bàn de xué shēng dōu qù le tú shū guǎn."
+    },
+    {
+      "word": "有的",
+      "zh": "教室里的学生有的在看书。",
+      "revisado": "jiào shì lǐ de xué sheng yǒu de zài kàn shū。",
+      "tuberia": "jiào shì lǐ de xué shēng yǒu de zài kàn shū."
+    },
+    {
+      "word": "有些",
+      "zh": "她听到消息后有些紧张。",
+      "revisado": "tā tīng dào xiāo xī hòu yǒu xiē jǐn zhāng。",
+      "tuberia": "tā tīng dào xiāo xi hòu yǒu xiē jǐn zhāng."
+    },
+    {
+      "word": "雨",
+      "zh": "我喜欢雨的味道。",
+      "revisado": "wǒ xǐ huan yǔ de wèi dào。",
+      "tuberia": "wǒ xǐ huan yǔ de wèi dao."
+    },
+    {
+      "word": "真",
+      "zh": "你真聪明。",
+      "revisado": "nǐ zhēn cōng míng。",
+      "tuberia": "nǐ zhēn cōng ming."
+    },
+    {
+      "word": "中午",
+      "zh": "中午的太阳很大。",
+      "revisado": "zhōng wǔ de tài yáng hěn dà。",
+      "tuberia": "zhōng wǔ de tài yang hěn dà."
+    },
+    {
+      "word": "坐",
+      "zh": "我们坐下休息一会儿吧。",
+      "revisado": "wǒ men zuò xià xiū xi yí huìr ba。",
+      "tuberia": "wǒ men zuò xia xiū xi yí huìr ba."
+    }
+  ],
+  "problemas": []
+}

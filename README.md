@@ -10,6 +10,15 @@
 
 ---
 
+## Repository structure
+
+| Folder | What it is |
+|---|---|
+| [`backend/`](backend/) | Django API (modular monolith). Start with [`backend/README.md`](backend/README.md) |
+| [`backend/Docs/`](backend/Docs/) | Product documentation in Spanish, the single source of truth: vision, rules, decisions, user stories with their tests, architecture and API contract. Start with [`00-indice.md`](backend/Docs/00-indice.md) |
+| [`frontend/`](frontend/) | Next.js app for students. See [`frontend/README.md`](frontend/README.md) |
+| `Workshop-1/`, `Workshop-2/` | Course deliverables, kept as history. Where they disagree with `backend/Docs/`, the docs win |
+
 ## About
 
 HanziApp is a web application for learning Mandarin Chinese and preparing for the HSK 3.0 exam. It is designed for both Spanish and English speakers, with language selection available from the start, and combines active-recall flashcards, spaced repetition, and stroke-by-stroke writing practice in a single tool.

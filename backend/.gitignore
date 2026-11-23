@@ -1,0 +1,40 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+*.log
+media/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Base de desarrollo del frontend
+*dev.sqlite3
+db.sqlite3.bak-*
+
+# No se publican (repositorio público)
+# - Glosas de terceros (Mandarin Bean): uso interno, no se redistribuyen (Docs/08-contenido.md §1)
+content_pipeline/hsk*_final.json
+clean_records.json
+review_queue_raw*.json
+qa/patch_content.json
+qa/patch_new_senses.json
+# - Documentos internos
+AUDITORIA_BACKEND.md
+.claude/

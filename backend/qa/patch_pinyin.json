@@ -1,0 +1,1787 @@
+[
+ {
+  "no": 1,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "hái zi men dōu ài zì jǐ de mā ma。"
+   }
+  }
+ },
+ {
+  "no": 3,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ bà ba zài jiā zuò fàn。"
+   },
+   "1": {
+    "pinyin": "wǒ bà ba měi tiān kāi chē shàng bān。"
+   },
+   "2": {
+    "pinyin": "wǒ ài wǒ bà ba。"
+   }
+  }
+ },
+ {
+  "no": 5,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā bái tiān gōng zuò , wǎn shang shàng kè。"
+   },
+   "1": {
+    "pinyin": "bái tiān tài rè le , wǒ men wǎn shang chū mén ba。"
+   },
+   "2": {
+    "pinyin": "zhè zhī māo bái tiān yì zhí zài shuì jiào。"
+   }
+  }
+ },
+ {
+  "no": 6,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ mǎi le bǎi fēn zhī bǎi chún mián de yī fu。"
+   },
+   "2": {
+    "pinyin": "cāo chǎng shàng yǒu shàng bǎi míng xué sheng。"
+   }
+  }
+ },
+ {
+  "no": 7,
+  "sense_index": 1,
+  "examples": {
+   "0": {
+    "pinyin": "tā bàn zhēng zhe yǎn jīng kàn zhe wǒ。"
+   },
+   "1": {
+    "pinyin": "tā bàn xìn bàn yí de tīng zhe。"
+   }
+  }
+ },
+ {
+  "no": 8,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zǎo shang mǎi le jǐ gè bāo zi。"
+   },
+   "2": {
+    "pinyin": "wǒ xǐ huan chī rè téng téng de bāo zi。"
+   }
+  }
+ },
+ {
+  "no": 12,
+  "sense_index": 1,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ mā ma bìng le。"
+   },
+   "2": {
+    "pinyin": "xiǎo gǒu bìng de hěn zhòng。"
+   }
+  }
+ },
+ {
+  "no": 13,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ bù xǐ huan chī là de。"
+   }
+  }
+ },
+ {
+  "no": 14,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "xiè xie nǐ de bāng zhù。 bú kè qi。"
+   },
+   "1": {
+    "pinyin": "bú kè qi , zhè shì wǒ yīng gāi zuò de。"
+   },
+   "2": {
+    "pinyin": "bú kè qi , yǒu xū yào zài zhǎo wǒ。"
+   }
+  }
+ },
+ {
+  "no": 16,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zài shì chǎng mǎi cài。"
+   }
+  }
+ },
+ {
+  "no": 17,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zǎo shang xǐ huan hē chá。"
+   }
+  }
+ },
+ {
+  "no": 18,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā xǐ huan chàng gē。"
+   }
+  }
+ },
+ {
+  "no": 21,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ měi tiān zǎo shang chī miàn bāo。"
+   }
+  }
+ },
+ {
+  "no": 23,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā xǐ huan chuān hēi sè de yī fu。"
+   }
+  }
+ },
+ {
+  "no": 24,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xiàn zài gěi mā ma dǎ diàn huà。"
+   }
+  }
+ },
+ {
+  "no": 26,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "dà jiā dōu xǐ huan zhè ge diàn yǐng。"
+   },
+   "2": {
+    "pinyin": "xiè xie dà jiā de bāng zhù。"
+   }
+  }
+ },
+ {
+  "no": 27,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mèi mei zài běi jīng dà xué dú shū。"
+   }
+  }
+ },
+ {
+  "no": 28,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ gē ge shì dà xué shēng。"
+   }
+  }
+ },
+ {
+  "no": 30,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā shì wǒ de péng you。"
+   }
+  }
+ },
+ {
+  "no": 32,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ dì di xǐ huan chī qiǎo kè lì。"
+   }
+  }
+ },
+ {
+  "no": 33,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "yǔ xià de bú dà， zhǐ yǒu jǐ diǎn shuǐ dī。"
+   }
+  }
+ },
+ {
+  "no": 34,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè jiā diàn wǎn shang shí diǎn guān mén。"
+   }
+  }
+ },
+ {
+  "no": 35,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā de diàn huà hào mǎ shì duō shao ?"
+   }
+  }
+ },
+ {
+  "no": 37,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xǐ huan wǎn shang kàn diàn shì。"
+   }
+  }
+ },
+ {
+  "no": 38,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ men jīn tiān wǎn shang qù kàn diàn yǐng。"
+   },
+   "2": {
+    "pinyin": "tā xǐ huan kàn wài guó diàn yǐng。"
+   }
+  }
+ },
+ {
+  "no": 39,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ men wǎn shang qù diàn yǐng yuàn kàn diàn yǐng。"
+   },
+   "2": {
+    "pinyin": "zhè jiā diàn yǐng yuàn de zuò wèi hěn shū fu。"
+   }
+  }
+ },
+ {
+  "no": 40,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè shì shén me dōng xi ?"
+   },
+   "1": {
+    "pinyin": "wǒ xiǎng mǎi diǎn dōng xi。"
+   },
+   "2": {
+    "pinyin": "zhuō zi shàng yǒu hěn duō dōng xi。"
+   }
+  }
+ },
+ {
+  "no": 41,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ men dōu shì xué sheng。"
+   },
+   "1": {
+    "pinyin": "tā men dōu xǐ huan chī píng guǒ。"
+   },
+   "2": {
+    "pinyin": "zhè liǎng jiàn yī fu dōu hěn piào liang。"
+   }
+  }
+ },
+ {
+  "no": 42,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā xǐ huan dú zhōng wén xiǎo shuō。"
+   }
+  }
+ },
+ {
+  "no": 43,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā xǐ huan zài jiā dú shū。"
+   },
+   "1": {
+    "pinyin": "wǒ mèi mei zài běi jīng dú shū。"
+   },
+   "2": {
+    "pinyin": "hái zi men měi tiān wǎn shang dú shū。"
+   }
+  }
+ },
+ {
+  "no": 44,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ shuō de duì。"
+   }
+  }
+ },
+ {
+  "no": 44,
+  "sense_index": 1,
+  "examples": {
+   "2": {
+    "pinyin": "lǎo shī duì xué sheng hěn nài xīn。"
+   }
+  }
+ },
+ {
+  "no": 44,
+  "sense_index": 2,
+  "examples": {
+   "1": {
+    "pinyin": "tā duì péng you hěn rè qíng。"
+   }
+  }
+ },
+ {
+  "no": 46,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ yǒu hěn duō péng you。"
+   }
+  }
+ },
+ {
+  "no": 46,
+  "sense_index": 1,
+  "examples": {
+   "2": {
+    "pinyin": "tā de bān lǐ duō wǔ gè xué sheng。"
+   }
+  }
+ },
+ {
+  "no": 46,
+  "sense_index": 3,
+  "examples": {
+   "0": {
+    "pinyin": "zhè ge bān yǒu èr shí duō gè xué sheng。"
+   }
+  }
+ },
+ {
+  "no": 47,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiàn yī fu duō shao qián ?"
+   },
+   "1": {
+    "pinyin": "nǐ men bān yǒu duō shao xué sheng ?"
+   },
+   "2": {
+    "pinyin": "zhè ge xiāng zi lǐ yǒu duō shao shū ?"
+   }
+  }
+ },
+ {
+  "no": 50,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "mā ma zài zuò fàn。"
+   }
+  }
+ },
+ {
+  "no": 51,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ men wǎn shang qù fàn diàn chī fàn ba。"
+   }
+  }
+ },
+ {
+  "no": 53,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā fēi cháng xǐ huan tiào wǔ。"
+   }
+  }
+ },
+ {
+  "no": 55,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ men zhǐ xiū xi le shí fēn zhōng。"
+   }
+  }
+ },
+ {
+  "no": 55,
+  "sense_index": 1,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma bǎ dàn gāo fēn chéng sì kuài。"
+   },
+   "2": {
+    "pinyin": "lǎo shī bǎ xué sheng fēn chéng liǎng zǔ。"
+   }
+  }
+ },
+ {
+  "no": 57,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "rèn shi nǐ hěn gāo xìng。"
+   }
+  }
+ },
+ {
+  "no": 58,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ xǐ huan zhè shǒu gē。"
+   }
+  }
+ },
+ {
+  "no": 59,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ gē ge bǐ wǒ dà sān suì。"
+   },
+   "1": {
+    "pinyin": "gē ge měi tiān sòng wǒ qù shàng xué。"
+   },
+   "2": {
+    "pinyin": "wǒ de gē ge zài běi jīng gōng zuò。"
+   }
+  }
+ },
+ {
+  "no": 61,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma gěi wǒ yì běn shū。"
+   }
+  }
+ },
+ {
+  "no": 61,
+  "sense_index": 1,
+  "examples": {
+   "1": {
+    "pinyin": "tā gěi mā ma mǎi le lǐ wù。"
+   }
+  }
+ },
+ {
+  "no": 63,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā fēi cháng nǔ lì de gōng zuò。"
+   }
+  }
+ },
+ {
+  "no": 64,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "nà zhī gǒu hěn kě ài。"
+   }
+  }
+ },
+ {
+  "no": 65,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiàn yī fu tài guì le。"
+   }
+  }
+ },
+ {
+  "no": 69,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā de hàn yǔ shuō de hěn hǎo。"
+   }
+  }
+ },
+ {
+  "no": 70,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā rèn shi hěn duō hàn zì。"
+   }
+  }
+ },
+ {
+  "no": 71,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā shì wǒ de hǎo péng you。"
+   }
+  }
+ },
+ {
+  "no": 71,
+  "sense_index": 2,
+  "examples": {
+   "1": {
+    "pinyin": "yé ye hǎo hē chá。"
+   },
+   "2": {
+    "pinyin": "wǒ mèi mei hǎo ān jìng。"
+   }
+  }
+ },
+ {
+  "no": 72,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "mā ma zuò de fàn zhēn hǎo chī。"
+   }
+  }
+ },
+ {
+  "no": 73,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā jīn tiān dǎ bàn de hěn hǎo kàn。"
+   }
+  }
+ },
+ {
+  "no": 74,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè ge míng zi hěn hǎo tīng。"
+   }
+  }
+ },
+ {
+  "no": 75,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè zhī xiǎo māo zhēn hǎo wánr。"
+   }
+  }
+ },
+ {
+  "no": 76,
+  "sense_index": 1,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ yào yí jiàn dà hào de yī fu。"
+   }
+  }
+ },
+ {
+  "no": 78,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā hé mā ma qù le chāo shì。"
+   },
+   "2": {
+    "pinyin": "tā xǐ huan hé péng you men tī zú qiú。"
+   }
+  }
+ },
+ {
+  "no": 78,
+  "sense_index": 1,
+  "examples": {
+   "2": {
+    "pinyin": "tā hé wǒ shì hǎo péng you。"
+   }
+  }
+ },
+ {
+  "no": 81,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "nǐ shén me shí hou huí lái ?"
+   }
+  }
+ },
+ {
+  "no": 84,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zǎo shang xǐ huan chī jī dàn。"
+   },
+   "1": {
+    "pinyin": "mā ma mǎi le yì jīn jī dàn。"
+   }
+  }
+ },
+ {
+  "no": 87,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "guò nián de shí hou , jiā rén dōu huì huí jiā tuán jù。"
+   }
+  }
+ },
+ {
+  "no": 89,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mǎi le yí jiàn yī fu。"
+   }
+  }
+ },
+ {
+  "no": 90,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zài bāo jiǎo zi。"
+   }
+  }
+ },
+ {
+  "no": 91,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "mā ma zài jiào nǐ。"
+   },
+   "2": {
+    "pinyin": "zhè zhī xiǎo gǒu jiào shén me míng zi ?"
+   }
+  }
+ },
+ {
+  "no": 92,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ jiě jie bǐ wǒ dà sān suì。"
+   },
+   "1": {
+    "pinyin": "jiě jie zài běi jīng gōng zuò。"
+   },
+   "2": {
+    "pinyin": "jiě jie měi tiān dōu gěi wǒ zuò fàn。"
+   }
+  }
+ },
+ {
+  "no": 99,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xǐ huan kàn diàn yǐng。"
+   },
+   "2": {
+    "pinyin": "nǐ kàn nà zhī xiǎo gǒu。"
+   }
+  }
+ },
+ {
+  "no": 105,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "zhè ge píng guǒ sān kuài qián。"
+   }
+  }
+ },
+ {
+  "no": 106,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "nǐ shén me shí hou lái ?"
+   },
+   "2": {
+    "pinyin": "wǒ péng you cóng běi jīng lái。"
+   }
+  }
+ },
+ {
+  "no": 109,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wài miàn hěn lěng， duō chuān diǎn yī fu。"
+   }
+  }
+ },
+ {
+  "no": 111,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ yǒu liǎng gè gē ge。"
+   }
+  }
+ },
+ {
+  "no": 112,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "xiàn zài shì zǎo shang bā diǎn líng wǔ fēn。"
+   }
+  }
+ },
+ {
+  "no": 114,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mā ma zài chú fáng zuò fàn。"
+   },
+   "1": {
+    "pinyin": "mā ma jīn tiān hěn máng。"
+   },
+   "2": {
+    "pinyin": "mā ma xǐ huan hē chá。"
+   }
+  }
+ },
+ {
+  "no": 115,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "nǐ shì xué sheng ma ?"
+   },
+   "2": {
+    "pinyin": "nǐ xǐ huan chī píng guǒ ma ?"
+   }
+  }
+ },
+ {
+  "no": 116,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xiǎng mǎi yí jiàn xīn yī fu。"
+   },
+   "2": {
+    "pinyin": "zhè jiā shāng diàn de dōng xi hěn pián yi， wǒ men qù mǎi ba。"
+   }
+  }
+ },
+ {
+  "no": 118,
+  "sense_index": 1,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zuì jìn hěn máng。"
+   },
+   "1": {
+    "pinyin": "wǒ jīn tiān máng de méi shí jiān chī fàn。"
+   }
+  }
+ },
+ {
+  "no": 119,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "zhè zhī māo hěn kě ài。"
+   },
+   "2": {
+    "pinyin": "māo xǐ huan shuì jiào。"
+   }
+  }
+ },
+ {
+  "no": 120,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "méi guān xi , màn màn lái。"
+   },
+   "1": {
+    "pinyin": "duì bù qǐ ! méi guān xi。"
+   },
+   "2": {
+    "pinyin": "méi guān xi , wǒ men hái yǒu shí jiān。"
+   }
+  }
+ },
+ {
+  "no": 123,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mèi mei jīn nián shàng dà xué。"
+   },
+   "1": {
+    "pinyin": "tā mèi mei hěn xǐ huan huà huà。"
+   },
+   "2": {
+    "pinyin": "wǒ mèi mei bǐ wǒ xiǎo sān suì。"
+   }
+  }
+ },
+ {
+  "no": 125,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "mā ma zhǔ le yì guō mǐ fàn。"
+   }
+  }
+ },
+ {
+  "no": 126,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zǎo shang xǐ huan chī miàn bāo。"
+   }
+  }
+ },
+ {
+  "no": 127,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "mā ma zhǔ le yì wǎn miàn tiáor。"
+   }
+  }
+ },
+ {
+  "no": 130,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ jiào shén me míng zi ?"
+   },
+   "1": {
+    "pinyin": "wǒ de míng zi shì lǐ míng。"
+   },
+   "2": {
+    "pinyin": "tā de míng zi hěn hǎo tīng。"
+   }
+  }
+ },
+ {
+  "no": 131,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ xǐ huan nǎ ge yán sè ?"
+   }
+  }
+ },
+ {
+  "no": 132,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè liǎng jiàn yī fu , nǐ xǐ huan nǎ ge ?"
+   }
+  }
+ },
+ {
+  "no": 135,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ xǐ huan nǎ xiē yán sè ?"
+   }
+  }
+ },
+ {
+  "no": 136,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "nà jiàn yī fu hěn piào liang。"
+   }
+  }
+ },
+ {
+  "no": 138,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xǐ huan nà ge bāo。"
+   }
+  }
+ },
+ {
+  "no": 141,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ bù xǐ huan nà xiē yán sè。"
+   }
+  }
+ },
+ {
+  "no": 143,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā de nán péng you hěn gāo。"
+   },
+   "1": {
+    "pinyin": "wǒ nán péng you xǐ huan zuò fàn。"
+   },
+   "2": {
+    "pinyin": "nǐ yǒu nán péng you ma ?"
+   }
+  }
+ },
+ {
+  "no": 146,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ jiào shén me míng zi ?"
+   },
+   "1": {
+    "pinyin": "nǐ jīn tiān hěn piào liang。"
+   },
+   "2": {
+    "pinyin": "nǐ shì xué sheng ma ?"
+   }
+  }
+ },
+ {
+  "no": 147,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ hǎo , hěn gāo xìng rèn shi nǐ。"
+   }
+  }
+ },
+ {
+  "no": 150,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "xiè xie nín de bāng zhù。"
+   }
+  }
+ },
+ {
+  "no": 151,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ měi tiān zǎo shang hē niú nǎi。"
+   },
+   "2": {
+    "pinyin": "mā ma gěi hái zi mǎi le niú nǎi。"
+   }
+  }
+ },
+ {
+  "no": 152,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "zhè suǒ xué xiào yǒu hěn duō nǚ xué sheng。"
+   },
+   "2": {
+    "pinyin": "wǒ mèi mei zài nǚ zǐ lán qiú duì。"
+   }
+  }
+ },
+ {
+  "no": 154,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè shì wǒ de nǚ péng you。"
+   },
+   "1": {
+    "pinyin": "tā hái méi yǒu nǚ péng you。"
+   },
+   "2": {
+    "pinyin": "wǒ nǚ péng you xǐ huan tiào wǔ。"
+   }
+  }
+ },
+ {
+  "no": 156,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā shì wǒ de hǎo péng you。"
+   },
+   "1": {
+    "pinyin": "wǒ men zhōu mò hé péng you yì qǐ chī fàn。"
+   },
+   "2": {
+    "pinyin": "tā zài xué xiào jiāo le hěn duō péng you。"
+   }
+  }
+ },
+ {
+  "no": 157,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiàn yī fu hěn pián yi。"
+   }
+  }
+ },
+ {
+  "no": 158,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè tiáo qún zi hěn piào liang。"
+   },
+   "1": {
+    "pinyin": "tā zhǎng de fēi cháng piào liang。"
+   },
+   "2": {
+    "pinyin": "zhè ge huā yuán zhēn piào liang。"
+   }
+  }
+ },
+ {
+  "no": 159,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "mā ma mǎi le yì xiē píng guǒ。"
+   }
+  }
+ },
+ {
+  "no": 162,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "cāo chǎng shàng yǒu yì qiān gè xué sheng。"
+   }
+  }
+ },
+ {
+  "no": 164,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "zhè běn shū duō shao qián ?"
+   }
+  }
+ },
+ {
+  "no": 166,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "qǐng wèn , zhè ge duō shao qián ?"
+   }
+  }
+ },
+ {
+  "no": 171,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ rèn shi nà ge nǚ hái。"
+   },
+   "1": {
+    "pinyin": "hěn gāo xìng rèn shi nǐ。"
+   },
+   "2": {
+    "pinyin": "tā bú rèn shi zhè ge zì。"
+   }
+  }
+ },
+ {
+  "no": 174,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiā shāng diàn mài yī fu。"
+   }
+  }
+ },
+ {
+  "no": 177,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "shàng kè de shí hou bú yào shuō huà。"
+   }
+  }
+ },
+ {
+  "no": 182,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ jiào shén me míng zi ?"
+   }
+  }
+ },
+ {
+  "no": 183,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ mèi mei shēng bìng le， yì zhí zài fā shāo。"
+   },
+   "2": {
+    "pinyin": "nǐ shēng bìng le， yīng gāi duō xiū xi。"
+   }
+  }
+ },
+ {
+  "no": 185,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "nǐ shén me shí hou huí jiā ?"
+   },
+   "1": {
+    "pinyin": "xiǎo shí hou wǒ hěn xǐ huan tiào wǔ。"
+   },
+   "2": {
+    "pinyin": "xià yǔ de shí hou wǒ men jiù zài jiā kàn diàn shì。"
+   }
+  }
+ },
+ {
+  "no": 186,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "shí jiān guò de hěn kuài。"
+   }
+  }
+ },
+ {
+  "no": 188,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ shì xué sheng。"
+   },
+   "1": {
+    "pinyin": "tā shì wǒ de péng you。"
+   }
+  }
+ },
+ {
+  "no": 190,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā měi tiān wǎn shang kàn shū。"
+   }
+  }
+ },
+ {
+  "no": 193,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "mā ma mǎi le hěn duō shuǐ guǒ。"
+   }
+  }
+ },
+ {
+  "no": 194,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zuó wǎn shuì de hěn wǎn。"
+   }
+  }
+ },
+ {
+  "no": 195,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ měi tiān wǎn shang shí diǎn shuì jiào。"
+   }
+  }
+ },
+ {
+  "no": 197,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā xǐ huan gēn péng you shuō huà。"
+   }
+  }
+ },
+ {
+  "no": 199,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè zhī gǒu sān suì le。"
+   }
+  }
+ },
+ {
+  "no": 200,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ rèn shi tā hěn duō nián le。"
+   }
+  }
+ },
+ {
+  "no": 201,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè zhī māo hěn kě ài , tā xǐ huan shuì jiào。"
+   },
+   "1": {
+    "pinyin": "nà běn shū hěn yǒu yì si , wǒ hěn xǐ huan tā。"
+   }
+  }
+ },
+ {
+  "no": 203,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā men shì wǒ de péng you。"
+   },
+   "2": {
+    "pinyin": "tā men xǐ huan chī zhōng guó cài。"
+   }
+  }
+ },
+ {
+  "no": 204,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè xiē píng guǒ hěn xīn xiān , tā men shì jīn tiān zǎo shang mǎi de。"
+   },
+   "1": {
+    "pinyin": "māo hé gǒu hěn kě ài , wǒ xǐ huan tā men。"
+   }
+  }
+ },
+ {
+  "no": 205,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "tā men shì wǒ de péng you。"
+   },
+   "2": {
+    "pinyin": "tā men xǐ huan tiào wǔ。"
+   }
+  }
+ },
+ {
+  "no": 206,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiàn yī fu tài guì le。"
+   },
+   "2": {
+    "pinyin": "nǐ jīn tiān tài piào liang le。"
+   }
+  }
+ },
+ {
+  "no": 209,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xǐ huan tīng yīn yuè。"
+   },
+   "2": {
+    "pinyin": "tā měi tiān zǎo shang tīng xīn wén。"
+   }
+  }
+ },
+ {
+  "no": 216,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "mā ma zhèng zài zuò wǎn fàn。"
+   }
+  }
+ },
+ {
+  "no": 217,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ wǎn shang qī diǎn chī fàn。"
+   },
+   "1": {
+    "pinyin": "tā wǎn shang xǐ huan kàn shū。"
+   },
+   "2": {
+    "pinyin": "wǎn shang wài miàn hěn lěng。"
+   }
+  }
+ },
+ {
+  "no": 221,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ shì xué sheng。"
+   },
+   "1": {
+    "pinyin": "wǒ xǐ huan hē chá。"
+   }
+  }
+ },
+ {
+  "no": 222,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ men shì xué sheng。"
+   }
+  }
+ },
+ {
+  "no": 225,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ xǐ huan hē kā fēi。"
+   },
+   "1": {
+    "pinyin": "tā hěn xǐ huan zhè zhī xiǎo gǒu。"
+   },
+   "2": {
+    "pinyin": "nǐ xǐ huan shén me yán sè ?"
+   }
+  }
+ },
+ {
+  "no": 231,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè wèi shì wáng xiān sheng。"
+   },
+   "1": {
+    "pinyin": "wǒ xiān sheng zài shàng bān。"
+   },
+   "2": {
+    "pinyin": "xiān sheng , qǐng wèn xǐ shǒu jiān zài nǎ lǐ ?"
+   }
+  }
+ },
+ {
+  "no": 234,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè zhī gǒu hěn xiǎo。"
+   }
+  }
+ },
+ {
+  "no": 234,
+  "sense_index": 1,
+  "examples": {
+   "1": {
+    "pinyin": "xiǎo wáng shì wǒ zuì hǎo de péng you。"
+   }
+  }
+ },
+ {
+  "no": 235,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè ge xiǎo péng you jǐ suì le？"
+   },
+   "1": {
+    "pinyin": "xiǎo péng you men zài gōng yuán lǐ wán。"
+   },
+   "2": {
+    "pinyin": "xiǎo péng you , nǐ jiào shén me míng zi？"
+   }
+  }
+ },
+ {
+  "no": 237,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mèi mei zài xiǎo xué dú shū。"
+   }
+  }
+ },
+ {
+  "no": 239,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "zhè xiē xué sheng hěn cōng míng。"
+   }
+  }
+ },
+ {
+  "no": 240,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "qǐng xiě xià nǐ de míng zi。"
+   }
+  }
+ },
+ {
+  "no": 241,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "xiè xie nǐ de bāng zhù。"
+   },
+   "1": {
+    "pinyin": "xiè xie dà jiā lái cān jiā。"
+   },
+   "2": {
+    "pinyin": "wǒ xiǎng xiè xie lǎo shī。"
+   }
+  }
+ },
+ {
+  "no": 242,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ mǎi le yí jiàn xīn yī fu。"
+   }
+  }
+ },
+ {
+  "no": 245,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "xīng qī tiān zǎo shang wǒ xǐ huan shuì lǎn jiào。"
+   }
+  }
+ },
+ {
+  "no": 246,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ lèi le , xiǎng xiū xi yí xià。"
+   },
+   "1": {
+    "pinyin": "zhōu mò tā zài jiā xiū xi。"
+   },
+   "2": {
+    "pinyin": "gōng zuò tài jiǔ le , gāi xiū xi le。"
+   }
+  }
+ },
+ {
+  "no": 248,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "zhè ge xué sheng hěn cōng míng。"
+   },
+   "2": {
+    "pinyin": "xué sheng men zhèng zài jiào shì lǐ shàng kè。"
+   }
+  }
+ },
+ {
+  "no": 249,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ měi tiān wǎn shang xué xí zhōng wén。"
+   }
+  }
+ },
+ {
+  "no": 253,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ yě xǐ huan chī píng guǒ。"
+   }
+  }
+ },
+ {
+  "no": 255,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè jiàn yī fu hěn piào liang。"
+   },
+   "1": {
+    "pinyin": "wǒ yào mǎi xīn yī fu。"
+   },
+   "2": {
+    "pinyin": "tā zài xǐ yī fu。"
+   }
+  }
+ },
+ {
+  "no": 256,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ bà ba shì yī shēng。"
+   },
+   "2": {
+    "pinyin": "yī shēng ràng wǒ duō xiū xi。"
+   }
+  }
+ },
+ {
+  "no": 257,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ mā ma zài yī yuàn gōng zuò。"
+   }
+  }
+ },
+ {
+  "no": 258,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "jiào shì lǐ yí bàn de xué sheng dōu qù le tú shū guǎn。"
+   }
+  }
+ },
+ {
+  "no": 259,
+  "sense_index": 1,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ xiǎng xiū xi yí xià。"
+   }
+  }
+ },
+ {
+  "no": 260,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "zhè bǎ yǐ zi hěn shū fu。"
+   }
+  }
+ },
+ {
+  "no": 262,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā mǎi le yì xiē xīn yī fu。"
+   }
+  }
+ },
+ {
+  "no": 263,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā yǒu hěn duō péng you。"
+   }
+  }
+ },
+ {
+  "no": 264,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ de péng you yǒu de zài běi jīng gōng zuò。"
+   },
+   "2": {
+    "pinyin": "jiào shì lǐ de xué sheng yǒu de zài kàn shū。"
+   }
+  }
+ },
+ {
+  "no": 266,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "yǒu xiē rén xǐ huan hē chá。"
+   },
+   "2": {
+    "pinyin": "yǒu xiē wèn tí wǒ bù míng bai。"
+   }
+  }
+ },
+ {
+  "no": 267,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ xǐ huan yǔ de wèi dào。"
+   }
+  }
+ },
+ {
+  "no": 271,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zài jiā。"
+   }
+  }
+ },
+ {
+  "no": 273,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ jīn tiān qǐ de hěn zǎo。"
+   }
+  }
+ },
+ {
+  "no": 275,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zǎo shang qī diǎn qǐ chuáng。"
+   },
+   "1": {
+    "pinyin": "tā zǎo shang xǐ huan hē kā fēi。"
+   },
+   "2": {
+    "pinyin": "jīn tiān zǎo shang xià yǔ le。"
+   }
+  }
+ },
+ {
+  "no": 281,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "wǒ xǐ huan zhè ge yán sè。"
+   },
+   "2": {
+    "pinyin": "zhè ge duō shao qián ?"
+   }
+  }
+ },
+ {
+  "no": 284,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ bú rèn shi zhè xiē rén。"
+   }
+  }
+ },
+ {
+  "no": 287,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "shù shàng yǒu liǎng zhī niǎo。"
+   }
+  }
+ },
+ {
+  "no": 288,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "wǒ zhī dào tā de míng zi。"
+   }
+  }
+ },
+ {
+  "no": 291,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "tā zhōng wǔ zài jiā xiū xi。"
+   }
+  }
+ },
+ {
+  "no": 296,
+  "sense_index": 0,
+  "examples": {
+   "1": {
+    "pinyin": "tā de zì xiě de hěn piào liang。"
+   },
+   "2": {
+    "pinyin": "wǒ bú rèn shi zhè ge zì。"
+   }
+  }
+ },
+ {
+  "no": 298,
+  "sense_index": 0,
+  "examples": {
+   "2": {
+    "pinyin": "wǒ men zuò xià xiū xi yí huìr ba。"
+   }
+  }
+ },
+ {
+  "no": 299,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zài chú fáng zuò fàn。"
+   }
+  }
+ },
+ {
+  "no": 300,
+  "sense_index": 0,
+  "examples": {
+   "0": {
+    "pinyin": "mā ma zài chú fáng zuò fàn。"
+   }
+  }
+ }
+]

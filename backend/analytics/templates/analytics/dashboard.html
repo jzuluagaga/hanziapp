@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p>Métricas de <code>Docs/07-eventos-y-metricas.md</code>. "Activado": cuenta con al menos una respuesta contada. Con pocas cuentas por cohorte, sirve para decidir seguir o parar, no para comparar variantes.</p>
+
+<h2>M-02 · Retención en la semana 4 (compuerta V1 → V2: 35 % seguir, 15 % parar)</h2>
+<table>
+  <tr><th>Cohorte</th><th>Activados</th><th>Volvieron (días 22–28)</th><th>%</th></tr>
+  {% for cohort, r in m.week4.items %}
+  <tr><td>{{ cohort }}</td><td>{{ r.den }}</td><td>{{ r.num }}</td><td>{{ r.pct|default:"—" }}</td></tr>
+  {% empty %}<tr><td colspan="4">Sin cuentas activadas todavía.</td></tr>{% endfor %}
+</table>
+
+<h2>M-03 · Retención a 1, 7 y 28 días</h2>
+<table>
+  <tr><th>Cohorte</th><th>Día 1</th><th>Día 7</th><th>Día 28</th></tr>
+  {% for cohort, r in m.retention.items %}
+  <tr><td>{{ cohort }}</td>{% for n, v in r.items %}<td>{{ v.pct|default:"—" }} % ({{ v.num }}/{{ v.den }})</td>{% endfor %}</tr>
+  {% empty %}<tr><td colspan="4">Sin datos.</td></tr>{% endfor %}
+</table>
+
+<h2>M-04 · Aciertos por intervalo programado (objetivo cercano a 90 %)</h2>
+<table>
+  <tr><th>Habilidad</th>{% for b in m.buckets %}<th>{{ b }} días</th>{% endfor %}</tr>
+  {% for skill, row in m.accuracy.items %}
+  <tr><td>{{ skill }}</td>{% for b, v in row.items %}<td>{{ v.pct|default:"—" }} % ({{ v.num }}/{{ v.den }})</td>{% endfor %}</tr>
+  {% empty %}<tr><td colspan="5">Sin repasos con intervalo todavía.</td></tr>{% endfor %}
+</table>
+
+<h2>M-14 · Reparto de días cerrados</h2>
+<p>Activos: {{ m.days.active }} · Exentos: {{ m.days.exempt }} · Fallados: {{ m.days.missed }}</p>
+{% endblock %}
