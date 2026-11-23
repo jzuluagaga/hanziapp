@@ -245,6 +245,7 @@ class GenerationJob(models.Model):
         COLLECTED = "collected", "collected"
 
     batch_id = models.CharField(max_length=100, unique=True)
+    kind = models.CharField(max_length=10, default="drafts", help_text="drafts (generate_drafts) o themes (classify_themes).")
     language = models.ForeignKey("languages.Language", on_delete=models.PROTECT, related_name="+")
     model = models.CharField(max_length=60)
     effort = models.CharField(max_length=10, blank=True)
@@ -310,3 +311,31 @@ class ContentReport(models.Model):
 
     def __str__(self):
         return f"{self.word.hanzi} · {self.element} · {self.status}"
+
+
+class WordTheme(models.Model):
+    """Subtema de una palabra (D-49). Lo propone `classify_themes` y lo aprueba el editor;
+    los mazos por tema solo usan asignaciones aprobadas. La lista de temas es dato:
+    `content/pipeline/data/themes.json`."""
+
+    class Status(models.TextChoices):
+        DRAFT = "draft", "borrador"
+        APPROVED = "approved", "aprobado"
+
+    word = models.OneToOneField(Word, on_delete=models.CASCADE, related_name="theme")
+    subtheme = models.CharField(max_length=40)
+    doubtful = models.BooleanField(default=False, help_text="El clasificador no está seguro: revisar primero.")
+    status = models.CharField(max_length=10, choices=Status.choices, default=Status.DRAFT)
+    origin = models.CharField(max_length=10, choices=Origin.choices, default=Origin.GENERATED)
+    generation_meta = models.JSONField(default=dict, blank=True)
+    reviewed_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["word__hsk_level", "word__syllabus_order"]
+        verbose_name = "tema de palabra"
+        verbose_name_plural = "temas de palabras"
+
+    def __str__(self):
+        return f"{self.word.hanzi} → {self.subtheme} ({self.status})"

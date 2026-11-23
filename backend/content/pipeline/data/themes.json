@@ -1,12 +1,13 @@
 {
- "version": 1,
+ "version": 2,
  "approved": "fundador, 22 nov 2026 (D-49)",
  "rules": [
   "Una palabra recibe un solo subtema: el de su acepción principal (D-14).",
   "Las palabras funcionales van a Gramática: partículas, conectores, adverbios, interrogativas, demostrativos y cuantificadores. Un adverbio solo sale de Gramática si es una fórmula social fija.",
-  "Los sustantivos de tiempo van a Números y tiempo.",
+  "Los sustantivos de tiempo van a Números y tiempo; las festividades y celebraciones (过年, 庆祝, 节日), a Fechas y calendario.",
   "Gana el dominio más específico (饭店 → Comida y bebida; 司机 → Trabajo y oficios; 同学 → Escuela; 元 → Compras y dinero).",
-  "Un verbo va a Acciones y procesos solo si no pertenece a un dominio (穿 → Ropa; 看病 → Salud; 聊 → Hablar y conversar)."
+  "Un verbo va a Acciones y procesos solo si no pertenece a un dominio (穿 → Ropa; 看病 → Salud; 聊 → Hablar y conversar).",
+  "Cualidades: van a Apariencia y cualidades físicas las de tamaño, forma, color, peso, velocidad, temperatura y fuerza (大, 快, 弱); a Valoración y cualidades abstractas, los juicios (bueno, interesante, normal, útil, importante)."
  ],
  "sizing": {
   "target": "system_deck_size del nivel (D-43)",
@@ -170,8 +171,8 @@
      "es": "Animales y plantas"
     },
     {
-     "key": "environment",
-     "es": "Medio ambiente"
+     "key": "geography_environment",
+     "es": "Geografía y medio ambiente"
     }
    ]
   },
@@ -267,5 +268,6 @@
     }
    ]
   }
- ]
+ ],
+ "doubtful": "Marca doubtful=true solo si dos subtemas son igual de válidos según las reglas; si las reglas deciden, no es dudosa."
 }

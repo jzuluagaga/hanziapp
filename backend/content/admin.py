@@ -8,7 +8,7 @@ from django.core.exceptions import PermissionDenied
 from django.utils.html import format_html, format_html_join
 
 from .models import (
-    AudioAsset, ContentReport, Example, ExampleTranslation, GenerationJob, LanguageContentVersion, Sense,
+    AudioAsset, ContentReport, Example, WordTheme, ExampleTranslation, GenerationJob, LanguageContentVersion, Sense,
     SenseTranslation, ThirdPartyGloss, ValidationResult, VersionStatus, Word, WordBaseVersion,
 )
 from .services.editorial import (
@@ -332,3 +332,82 @@ class ContentReportAdmin(admin.ModelAdmin):
     @admin.action(description="Descartar (no era un error)")
     def mark_dismissed(self, request, queryset):
         self._close(request, queryset, "dismissed")
+
+
+class _SubthemeFilter(admin.SimpleListFilter):
+    title = "subtema"
+    parameter_name = "subtheme"
+
+    def lookups(self, request, model_admin):
+        from .services.themes import taxonomy
+
+        return [(s["key"], f"{t['es']} · {s['es']}") for t in taxonomy()["themes"] for s in t["subthemes"]]
+
+    def queryset(self, request, queryset):
+        return queryset.filter(subtheme=self.value()) if self.value() else queryset
+
+
+@admin.register(WordTheme)
+class WordThemeAdmin(admin.ModelAdmin):
+    """Revisión de temas (D-49): las dudosas primero; se cambia el subtema en la lista y se aprueba por lote."""
+
+    list_display = ("hanzi", "pinyin", "level", "meaning", "subtheme", "doubtful", "status")
+    list_editable = ("subtheme",)
+    list_filter = ("status", "doubtful", _SubthemeFilter, "word__hsk_level")
+    search_fields = ("word__hanzi", "word__pinyin")
+    actions = ["approve_selected"]
+    list_per_page = 100
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related("word").order_by("-doubtful", "word__hsk_level", "word__syllabus_order")
+
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        if db_field.name == "subtheme":
+            from django import forms
+
+            from .services.themes import taxonomy
+
+            choices = [(s["key"], f"{t['es']} · {s['es']}") for t in taxonomy()["themes"] for s in t["subthemes"]]
+            return forms.ChoiceField(choices=choices)
+        return super().formfield_for_dbfield(db_field, request, **kwargs)
+
+    def has_module_permission(self, request):
+        return request.user.has_perm("content.manage_content")
+
+    def has_view_permission(self, request, obj=None):
+        return request.user.has_perm("content.manage_content")
+
+    def has_change_permission(self, request, obj=None):
+        return request.user.has_perm("content.manage_content")
+
+    def has_add_permission(self, request):
+        return False
+
+    def save_model(self, request, obj, form, change):
+        if change and "subtheme" in form.changed_data:
+            obj.origin, obj.doubtful = "manual", False
+        super().save_model(request, obj, form, change)
+
+    @admin.display(description="hanzi")
+    def hanzi(self, obj):
+        return obj.word.hanzi
+
+    @admin.display(description="pinyin")
+    def pinyin(self, obj):
+        return obj.word.pinyin
+
+    @admin.display(description="nivel")
+    def level(self, obj):
+        return obj.word.hsk_level
+
+    @admin.display(description="significado")
+    def meaning(self, obj):
+        from .services.themes import _meanings
+
+        return _meanings([obj.word]).get(obj.word_id, ("", ""))[1][:60]
+
+    @admin.action(description="Aprobar los seleccionados")
+    def approve_selected(self, request, queryset):
+        from .services.themes import approve
+
+        self.message_user(request, f"Aprobados: {approve(queryset, request.user)}")
