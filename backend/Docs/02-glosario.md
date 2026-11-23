@@ -68,6 +68,7 @@
 |---|---|---|---|
 | Mazo | `deck` | Conjunto ordenado de palabras para estudiar | lista, carpeta, colección |
 | Mazo del sistema | `deck.kind = system` | Mazo de solo lectura que agrupa palabras de un nivel | mazo HSK, mazo predeterminado |
+| Tema / Subtema | `theme` / `subtheme` (`word_theme`) | Agrupación temática de las palabras para armar los mazos del sistema (D-49). Cada palabra tiene un solo subtema; cada subtema pertenece a un tema | categoría, lección |
 | Mazo propio | `deck.kind = own` | Mazo creado por un estudiante | mazo personal, mi lista |
 
 Un mazo se mide en **palabras**. No existen "listas" ni "carpetas" que contengan mazos; los mazos del sistema se agrupan por nivel.

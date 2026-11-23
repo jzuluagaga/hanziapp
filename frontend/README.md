@@ -34,6 +34,7 @@ Navegador ──▶ /api/auth/{login,register,logout}  (src/app/api/auth)   ─�
 - **Credenciales:** las rutas de servidor de Next guardan `access` y `refresh` en cookies httpOnly y reenvían cada petición con `Authorization`. Si el acceso caducó, renuevan una vez y repiten (`src/lib/server/backend.ts`).
 - **Datos:** `src/lib/store/db.ts` es una **caché del servidor**, no un servidor simulado. Las pantallas solo usan `lib/store/actions.ts` (peticiones) y `lib/store/selectors.ts` (lecturas de la caché).
 - **Respuestas:** se aplican en pantalla al instante (la siguiente tarjeta no espera a la red, Q-03) y van a un buzón en `localStorage` que se envía en orden, con reintentos y espera creciente, también al recargar o al volver la red (R-SES-03, R-SES-04, D-44). Cada respuesta lleva un `client_id`; el servidor la aplica una sola vez.
+- **Nombres de mazos:** el servidor devuelve las claves de tema de cada mazo y la interfaz arma el nombre con los catálogos (`theme.*`; D-49). Cambiar el nombre de un tema es editar el texto en `es.ts` y `en.ts`.
 - **El servidor decide:** la cola, FSRS, la racha, los derechos, la búsqueda y la calificación de escucha y escritura ya no viven en el navegador. El frontend repite solo la regla del refuerzo y de la calificación de escritura para no esperar a la red; si el servidor dice otra cosa, la sesión se recarga desde él (R-SES-07).
 
 ## Pantallas

@@ -40,9 +40,9 @@ Un módulo solo depende de los que están por encima de él en la tabla. Nadie l
 |---|---|---|
 | `accounts` (app `users`, nombre heredado) | Cuentas, acceso, perfil, cohorte, intentos fallidos | R-CTA |
 | `languages` | Idiomas, interruptores, catálogos de interfaz | R-IDI |
-| `content` | Palabras, caracteres, base, contenido por idioma, versiones, audio, reportes | R-CON |
+| `content` | Palabras, caracteres (trazos y lista de escritura), base, contenido por idioma, versiones, audio, reportes, tema de cada palabra | R-CON, R-ESC-10 |
 | `entitlements` | Capacidades, planes, concesiones, límites, cuotas y consumos | R-DER |
-| `decks` | Mazos del sistema y propios | R-MAZ |
+| `decks` | Mazos del sistema (por tema o por tramos del sílabo) y propios | R-MAZ |
 | `scheduling` | Estados de repaso e historial; adaptador de FSRS | R-REP, R-ESC-03 |
 | `study` | Sesiones, colas, respuestas, reanudación | R-SES, R-ESC |
 | `progress` | Estado del día, racha, avance, meta de examen | R-PRO |

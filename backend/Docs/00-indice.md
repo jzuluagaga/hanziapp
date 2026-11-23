@@ -136,14 +136,14 @@ Avisa, sin fallar, de las reglas que ninguna historia cita y de los archivos sin
 
 | Fecha | Cambio |
 |---|---|
-| 15 nov 2026 | Primera versión y segunda revisión de `02`, `03` y `05` con las decisiones del fundador: día exento, guardado de escritura por carácter, diccionario gratuito, escucha con calendario propio, cortes V1a y V1b. |
-| 15 nov 2026 | Primera versión de `04`, `06`, `07`, `08`, `09`, `00` y el verificador. Añadidas las propuestas `D-38` a `D-41`. |
-| 22 nov 2026 | Decisiones D-45 (Google en V1b), D-46 (registro enlazado) y D-47 (modo de escritura elegido); D-41 y D-44 firmes.|
+| 15 nov 2026 | Primera versión de todos los documentos y del verificador; segunda revisión de `02`, `03` y `05` con las decisiones del fundador. Propuestas `D-38` a `D-41`. |
 | 22 nov 2026 | Cerradas las decisiones que bloqueaban V1a. Sin "Ya la sé" (`D-42`) y mazos del sistema con tamaño creciente por nivel (`D-43`). Escritos `01`, `10` y las 35 historias de V1 en `historias/`. El frontend ya no guarda copias: la única fuente es `backend/Docs/`. |
+| 22 nov 2026 | Decisiones D-45 (Google en V1b), D-46 (registro enlazado), D-47 (modo de escritura elegido) y D-48 (escritura solo de la lista oficial 书写字, 700 caracteres, 50 y 50 en HSK 1 y 2, `R-ESC-10`); D-41 y D-44 firmes. |
+| 22 nov 2026 | Mazos por tema (`D-49`): 11 temas y 46 subtemas; las 5.400 palabras clasificadas con la API (unos 1 USD), HSK 1 y 2 aprobados por el fundador y armados en 14 y 11 mazos. Reglas en `08-contenido.md` §7. |
 
 ## 10. Pendiente
 
 - Confirmar R-ESC-09 antes de V1b (`03-reglas-de-negocio.md`, sección 12).
-- Decidir cómo se dividen los mazos y qué caracteres se escriben en cada nivel antes de publicar (`08-contenido.md`, sección 7).
-- Elegir proveedor de síntesis de voz: sin audio no se puede publicar (`08-contenido.md`, sección 1).
+- Revisar y aprobar los temas de HSK 3 a 6 antes de publicarlos (unas 1.800 dudosas, casi todas en HSK 5 y 6).
+- Cerrar la síntesis de voz con Google (en gestión) y verificar sus condiciones: sin audio no se puede publicar (`08-contenido.md`, sección 1).
 - Validación legal de lo marcado **LEGAL** en `03-reglas-de-negocio.md`.

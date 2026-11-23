@@ -100,7 +100,7 @@
 | ID | Regla |
 |---|---|
 | R-MAZ-01 | Un *mazo* es del sistema o propio. No hay otros tipos ni contenedores de mazos. |
-| R-MAZ-02 | Los *mazos del sistema* son de solo lectura. Cada palabra vigente del sílabo está en exactamente un mazo del sistema, que pertenece a su nivel. Cada nivel se divide en mazos de `system_deck_size` palabras consecutivas en el orden del sílabo, con un tamaño propio por nivel que crece con el nivel (D-43); el último mazo del nivel se queda con el resto. **CONFIRMADO**. Pasará a mazos por tema cuando esté construida la asignación de temas (D-49). |
+| R-MAZ-02 | Los *mazos del sistema* son de solo lectura. Cada palabra vigente del sílabo está en exactamente un mazo del sistema, que pertenece a su nivel. Cada nivel se divide en mazos de `system_deck_size` palabras consecutivas en el orden del sílabo, con un tamaño propio por nivel que crece con el nivel (D-43); el último mazo del nivel se queda con el resto. Un nivel con todos sus temas aprobados se divide en cambio por tema, con las reglas de `08-contenido.md` §7 (D-49). **CONFIRMADO**. |
 | R-MAZ-03 | Un *mazo propio* pertenece a un estudiante y solo él lo ve. Su nombre tiene de 1 a 60 caracteres y no se repite entre sus mazos, sin distinguir mayúsculas. |
 | R-MAZ-04 | Un mazo propio contiene solo palabras del diccionario. Una palabra aparece una vez por mazo y puede estar en varios. Admite hasta `own_deck_max_words` palabras. |
 | R-MAZ-05 | El número de mazos propios que un estudiante tiene a la vez no supera su *límite* (`R-DER-05`). Se cuentan los mazos existentes, no los creados históricamente. **SUPUESTO ABIERTO** (interpretación de "hasta 10 mazos"). |

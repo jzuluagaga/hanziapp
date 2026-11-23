@@ -7,8 +7,8 @@ API de Django para HanziApp. La documentación de producto vive en `Docs/` (empi
 ```bash
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py build_system_decks      # mazos del sistema (R-MAZ-02, D-43); repetible
 python manage.py load_writing_list       # lista de escritura del sílabo (R-ESC-10); repetible
+python manage.py build_system_decks      # mazos del sistema: por tema si el nivel tiene sus temas aprobados (D-49); repetible
 python manage.py runserver               # API en http://127.0.0.1:8000/api/v1/
 python manage.py test                    # todas las pruebas
 python3 Docs/tools/verificar_docs.py --tests .,../frontend   # documentación y pruebas citadas
@@ -139,12 +139,23 @@ modelo, el esfuerzo, la versión del prompt y el lote del que salió.
 
 ## Pendiente
 
-- **Audio** (`synthesize_audio`): falta elegir proveedor de síntesis y
-  verificar sus condiciones (08-contenido.md §1). Hasta entonces
+- **Audio** (`synthesize_audio`): el proveedor será Google (en gestión);
+  falta verificar sus condiciones (08-contenido.md §1). Hasta entonces
   `audio_present` falla y nada se puede publicar.
-- `load_characters` (trazos) y `check_level_ready`.
-- Evento de analítica `content_published`: hoy queda en el registro de
-  auditoría; falta el módulo `analytics`.
+- `load_characters` (trazos) y `check_level_ready`: tarea 2 del equipo.
+- Temas de HSK 3 a 6: clasificados en borrador, falta revisarlos y aprobarlos.
+
+## Temas de las palabras (D-49)
+
+```bash
+python manage.py classify_themes --level 3                     # ensayo: cuenta tokens y estima el costo, sin gastar
+python manage.py classify_themes --sample 100 --sync           # muestra con resultado inmediato
+python manage.py classify_themes --level 3 --submit            # lote a mitad de precio
+python manage.py build_system_decks --level 3                  # tras aprobar todo el nivel en el panel
+```
+
+La lista de temas y las reglas están en `content/pipeline/data/themes.json`.
+Lo aprobado nunca se sobrescribe; se revisa en el panel, en «Temas de palabras».
 
 ## Contenido anterior
 

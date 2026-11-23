@@ -16,7 +16,8 @@
 | Lista de escritura (书写字) | Sílabo oficial, transcrita en `content/pipeline/data/writing_list.json` | Qué caracteres entran en escritura y desde qué nivel (`R-ESC-10`) | Citar la fuente en créditos | Cargada con `load_writing_list`; 700 caracteres (50, 50 y 150 por nivel de HSK 3 a 6), cotejada con el sílabo |
 | Datos de trazos | Make Me a Hanzi, a través de Hanzi Writer | Animación y práctica de escritura | Aviso de la Arphic Public License y de la licencia MIT de Hanzi Writer en créditos | Verificado en `EVALUACION-PRODUCTO.md`, sección 4.5 |
 | Significados en español, oraciones y traducciones | Generados con IA y revisados por una persona | Contenido propio | Revisión humana antes de publicar (`R-CON-07`) | Condiciones de uso comercial del proveedor **sin verificar** |
-| Audio | Síntesis de voz | Audio de palabras y ejemplos | La que fije el proveedor | Condiciones de uso comercial **sin verificar** |
+| Audio | Síntesis de voz de Google (en gestión) | Audio de palabras y ejemplos | La que fije el proveedor | Condiciones de uso comercial **sin verificar** |
+| Tema de cada palabra | Propuesto con la API de Claude (`classify_themes`) y revisado por el editor | Arma los mazos del sistema (D-49) | Revisión humana antes de usarlo | HSK 1 y 2 aprobados; HSK 3 a 6 en borrador |
 
 **Antes de abrir al público (V2)** hay que leer y anotar aquí las tres condiciones sin verificar. Mientras tanto no se cobra por el contenido.
 
@@ -36,7 +37,9 @@ Cada paso es un comando que se puede repetir sin duplicar nada: una segunda ejec
 | 6. `synthesize_audio` | Genera el audio de la palabra y de cada ejemplo que no lo tenga | Archivos de audio enlazados al borrador | R-CON-13 |
 | 7. Revisión en el panel | El editor lee, corrige y marca cada palabra | Borrador revisado; cada edición revalida | R-CON-06 |
 | 8. Publicar | Convierte el borrador en la versión publicada | Palabra visible y estudiable | R-CON-05 |
-| 9. `check_level_ready` | Comprueba la lista de la sección 5 | Informe del nivel | R-CON-16 |
+| 9. `classify_themes` y revisión de temas | Propone el subtema de cada palabra; el editor lo corrige y aprueba en «Temas de palabras» | Temas aprobados | R-MAZ-02, D-49 |
+| 10. `build_system_decks` | Arma los mazos del nivel: por tema si todos sus temas están aprobados | Mazos del sistema | R-MAZ-02 |
+| 11. `check_level_ready` | Comprueba la lista de la sección 5 | Informe del nivel | R-CON-16 |
 
 El pinyin de la palabra viene del sílabo y no se recalcula a partir del hanzi. El pinyin de los ejemplos se genera con las reglas de cambio de tono ya resueltas en la tubería y lo confirma la revisión.
 
