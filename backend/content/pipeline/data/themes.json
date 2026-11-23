@@ -1,0 +1,271 @@
+{
+ "version": 1,
+ "approved": "fundador, 22 nov 2026 (D-49)",
+ "rules": [
+  "Una palabra recibe un solo subtema: el de su acepción principal (D-14).",
+  "Las palabras funcionales van a Gramática: partículas, conectores, adverbios, interrogativas, demostrativos y cuantificadores. Un adverbio solo sale de Gramática si es una fórmula social fija.",
+  "Los sustantivos de tiempo van a Números y tiempo.",
+  "Gana el dominio más específico (饭店 → Comida y bebida; 司机 → Trabajo y oficios; 同学 → Escuela; 元 → Compras y dinero).",
+  "Un verbo va a Acciones y procesos solo si no pertenece a un dominio (穿 → Ropa; 看病 → Salud; 聊 → Hablar y conversar)."
+ ],
+ "sizing": {
+  "target": "system_deck_size del nivel (D-43)",
+  "band": [
+   0.5,
+   1.5
+  ],
+  "absolute_min": 8
+ },
+ "themes": [
+  {
+   "key": "people",
+   "es": "Personas y relaciones",
+   "subthemes": [
+    {
+     "key": "pronouns_people",
+     "es": "Pronombres y personas"
+    },
+    {
+     "key": "family",
+     "es": "Familia"
+    },
+    {
+     "key": "friends_relationships",
+     "es": "Amigos y relaciones"
+    },
+    {
+     "key": "character",
+     "es": "Carácter y personalidad"
+    }
+   ]
+  },
+  {
+   "key": "communication",
+   "es": "Comunicación",
+   "subthemes": [
+    {
+     "key": "greetings_courtesy",
+     "es": "Saludos y cortesía"
+    },
+    {
+     "key": "talking",
+     "es": "Hablar y conversar"
+    },
+    {
+     "key": "opinions",
+     "es": "Opiniones y argumentos"
+    },
+    {
+     "key": "media",
+     "es": "Medios e información"
+    }
+   ]
+  },
+  {
+   "key": "numbers_time",
+   "es": "Números y tiempo",
+   "subthemes": [
+    {
+     "key": "numbers_classifiers",
+     "es": "Números y clasificadores"
+    },
+    {
+     "key": "dates_calendar",
+     "es": "Fechas y calendario"
+    },
+    {
+     "key": "times_frequency",
+     "es": "Momentos del día y frecuencia"
+    },
+    {
+     "key": "quantities_measures",
+     "es": "Cantidades y medidas"
+    }
+   ]
+  },
+  {
+   "key": "daily_life",
+   "es": "Vida diaria",
+   "subthemes": [
+    {
+     "key": "food_drink",
+     "es": "Comida y bebida"
+    },
+    {
+     "key": "home_objects",
+     "es": "Casa y objetos"
+    },
+    {
+     "key": "clothing",
+     "es": "Ropa"
+    },
+    {
+     "key": "routine",
+     "es": "Rutina y tareas"
+    }
+   ]
+  },
+  {
+   "key": "places_movement",
+   "es": "Lugares y movimiento",
+   "subthemes": [
+    {
+     "key": "city_places",
+     "es": "Ciudad y lugares"
+    },
+    {
+     "key": "position_movement",
+     "es": "Posición, dirección y movimiento"
+    },
+    {
+     "key": "transport",
+     "es": "Transporte"
+    },
+    {
+     "key": "travel",
+     "es": "Viajes"
+    }
+   ]
+  },
+  {
+   "key": "study_work",
+   "es": "Estudio y trabajo",
+   "subthemes": [
+    {
+     "key": "school",
+     "es": "Escuela"
+    },
+    {
+     "key": "languages_learning",
+     "es": "Lenguas y aprendizaje"
+    },
+    {
+     "key": "jobs",
+     "es": "Trabajo y oficios"
+    },
+    {
+     "key": "business_economy",
+     "es": "Empresa y economía"
+    }
+   ]
+  },
+  {
+   "key": "body_nature",
+   "es": "Cuerpo y naturaleza",
+   "subthemes": [
+    {
+     "key": "body",
+     "es": "Cuerpo"
+    },
+    {
+     "key": "health",
+     "es": "Salud y medicina"
+    },
+    {
+     "key": "weather_seasons",
+     "es": "Clima y estaciones"
+    },
+    {
+     "key": "animals_plants",
+     "es": "Animales y plantas"
+    },
+    {
+     "key": "environment",
+     "es": "Medio ambiente"
+    }
+   ]
+  },
+  {
+   "key": "society_culture",
+   "es": "Sociedad y cultura",
+   "subthemes": [
+    {
+     "key": "shopping_money",
+     "es": "Compras y dinero"
+    },
+    {
+     "key": "sports_leisure",
+     "es": "Deporte y ocio"
+    },
+    {
+     "key": "arts_culture",
+     "es": "Arte y cultura"
+    },
+    {
+     "key": "politics_law",
+     "es": "Política y ley"
+    },
+    {
+     "key": "science_technology",
+     "es": "Ciencia y tecnología"
+    }
+   ]
+  },
+  {
+   "key": "actions",
+   "es": "Acciones y procesos",
+   "subthemes": [
+    {
+     "key": "basic_actions",
+     "es": "Acciones básicas y uso"
+    },
+    {
+     "key": "thinking_perception",
+     "es": "Pensamiento, percepción y deseo"
+    },
+    {
+     "key": "change_achievement",
+     "es": "Cambios, logros y gestión"
+    },
+    {
+     "key": "concepts_situations",
+     "es": "Conceptos y situaciones"
+    }
+   ]
+  },
+  {
+   "key": "qualities",
+   "es": "Cómo es algo",
+   "subthemes": [
+    {
+     "key": "appearance",
+     "es": "Apariencia y cualidades físicas"
+    },
+    {
+     "key": "evaluation",
+     "es": "Valoración y cualidades abstractas"
+    },
+    {
+     "key": "feelings",
+     "es": "Sentimientos y estados"
+    }
+   ]
+  },
+  {
+   "key": "grammar",
+   "es": "Gramática",
+   "subthemes": [
+    {
+     "key": "particles",
+     "es": "Partículas y auxiliares"
+    },
+    {
+     "key": "connectors",
+     "es": "Conectores"
+    },
+    {
+     "key": "adverbs",
+     "es": "Adverbios"
+    },
+    {
+     "key": "question_words",
+     "es": "Palabras interrogativas"
+    },
+    {
+     "key": "demonstratives_quantifiers",
+     "es": "Demostrativos y cuantificadores"
+    }
+   ]
+  }
+ ]
+}

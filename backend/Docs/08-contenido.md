@@ -13,6 +13,7 @@
 | Lista de palabras, hanzi, pinyin, nivel | Sílabo oficial del examen HSK (noviembre de 2025) | Se muestra siempre (`R-CON-01`) | Citar la fuente en créditos | Cotejar cada nivel contra el documento oficial antes de publicarlo |
 | Glosa en inglés por palabra | Listas de un tercero (Mandarin Bean) | **Solo interno**, como ancla de significado al generar (`R-CON-02`) | No mostrar ni redistribuir | Términos de uso **sin verificar** |
 | Entradas de diccionario | CC-CEDICT | Solo interno, como contraste al revisar | Si algún día se muestra: atribución y misma licencia para lo derivado | Licencia Creative Commons Atribución-CompartirIgual |
+| Lista de escritura (书写字) | Sílabo oficial, transcrita en `content/pipeline/data/writing_list.json` | Qué caracteres entran en escritura y desde qué nivel (`R-ESC-10`) | Citar la fuente en créditos | Cargada con `load_writing_list`; 700 caracteres (50, 50 y 150 por nivel de HSK 3 a 6), cotejada con el sílabo |
 | Datos de trazos | Make Me a Hanzi, a través de Hanzi Writer | Animación y práctica de escritura | Aviso de la Arphic Public License y de la licencia MIT de Hanzi Writer en créditos | Verificado en `EVALUACION-PRODUCTO.md`, sección 4.5 |
 | Significados en español, oraciones y traducciones | Generados con IA y revisados por una persona | Contenido propio | Revisión humana antes de publicar (`R-CON-07`) | Condiciones de uso comercial del proveedor **sin verificar** |
 | Audio | Síntesis de voz | Audio de palabras y ejemplos | La que fije el proveedor | Condiciones de uso comercial **sin verificar** |
@@ -29,7 +30,7 @@ Cada paso es un comando que se puede repetir sin duplicar nada: una segunda ejec
 |---|---|---|---|
 | 1. `load_syllabus` | Carga las palabras de un nivel con sus datos del sílabo y su orden | Palabras en estado "sin contenido", visibles en el diccionario como "en revisión" | R-CON-01, R-CON-03 |
 | 2. `check_syllabus` | Compara lo cargado con el documento oficial: conteo por nivel, hanzi y pinyin | Informe de diferencias; debe quedar en cero | R-CON-01 |
-| 3. `load_characters` | Descompone las palabras en caracteres y enlaza los datos de trazos | Caracteres; lista de los que no tienen trazos | R-CON-12 |
+| 3. `load_characters` y `load_writing_list` | Enlaza los datos de trazos de cada carácter y marca los de la lista de escritura con su nivel | Caracteres; lista de los que no tienen trazos | R-CON-12, R-ESC-10 |
 | 4. `generate_drafts` | Genera acepciones, tres ejemplos por acepción y sus traducciones al idioma indicado | Un borrador de base y uno de contenido por idioma | R-CON-04, R-CON-07 |
 | 5. `validate_drafts` | Ejecuta las validaciones de la sección 3 | Resultado por borrador | R-CON-06 |
 | 6. `synthesize_audio` | Genera el audio de la palabra y de cada ejemplo que no lo tenga | Archivos de audio enlazados al borrador | R-CON-13 |
@@ -104,9 +105,29 @@ Todo cambio queda en el registro de auditoría con autor, fecha y motivo (`R-DAT
 
 ## 7. Mazos del sistema
 
-Cada nivel se divide en mazos de `system_deck_size` palabras consecutivas, siguiendo el orden del sílabo; el tamaño crece con el nivel (`R-MAZ-02`, `D-43`). Los mazos se rehacen con `build_system_decks` cada vez que se carga o corrige un sílabo. Los mazos se llaman por clave ("HSK 1 · Parte 3"), así que no hay nombres que traducir ni que redactar.
+Hoy cada nivel se divide en tramos de `system_deck_size` palabras en el orden del sílabo (`R-MAZ-02`, `D-43`). **Decidido (D-49): pasarán a mazos por tema** cuando la asignación esté construida y revisada. La lista y las reglas viven como dato en `content/pipeline/data/themes.json`; los nombres se muestran por clave (`R-IDI-09`).
 
-**Pregunta abierta para el fundador.** El orden del sílabo no es pedagógico. Si se quiere otro (frecuencia de uso, temas, o las lecciones del libro que usa el instituto), hay que decidirlo **antes** de publicar un nivel: reordenar después mueve palabras entre mazos. El progreso no se pierde, porque pertenece a la palabra, pero los mazos que el estudiante ya conocía cambian.
+**11 temas y 46 subtemas**, en orden pedagógico: Personas y relaciones · Comunicación · Números y tiempo · Vida diaria · Lugares y movimiento · Estudio y trabajo · Cuerpo y naturaleza · Sociedad y cultura · Acciones y procesos · Cómo es algo · Gramática. Los subtemas de cada uno están en el archivo de datos.
+
+**Clasificación** (una sola vez, en el subtema; propuesta generada y revisada por el editor):
+
+1. Un solo subtema por palabra: el de su acepción principal (D-14).
+2. Las palabras funcionales van a Gramática; un adverbio solo sale de ahí si es una fórmula social fija.
+3. Los sustantivos de tiempo van a Números y tiempo.
+4. Gana el dominio más específico (饭店 → Comida y bebida; 司机 → Trabajo y oficios).
+5. Un verbo va a Acciones y procesos solo si no pertenece a un dominio (穿 → Ropa; 聊 → Hablar y conversar).
+
+**Armado por nivel**, con objetivo T = `system_deck_size` del nivel y banda [0,5 T; 1,5 T]:
+
+| Caso | Qué se hace | Nombre del mazo |
+|---|---|---|
+| El tema entero cabe en la banda o por debajo, con 8 palabras o más | Un mazo con todo el tema | El del tema |
+| El tema supera 1,5 T | Se divide por subtemas | El del subtema |
+| Un subtema queda por debajo de 0,5 T | Se junta con su vecino del mismo tema | "Subtema A · Subtema B"; si cubren todo el tema, el del tema; con tres o más, "Tema · Parte n" |
+| Un subtema supera 1,5 T | Se parte en tramos iguales | "Subtema · Parte n" |
+| Un tema tiene menos de 8 palabras en el nivel | Se junta con el tema siguiente en el orden | "Tema A · Tema B" |
+
+El mazo guarda las claves que contiene y la interfaz une sus traducciones: no hay claves nuevas por fusión. Dentro de cada mazo, las palabras van por utilidad y después en el orden del sílabo. Rehacer los mazos no toca el progreso, que pertenece a la palabra, pero cambia los mazos que el estudiante conocía: por eso la asignación se cierra antes de publicar un nivel.
 
 ## 8. Añadir un idioma de estudio
 
