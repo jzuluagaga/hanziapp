@@ -27,13 +27,24 @@ def set_param(key, value):
 
 
 def make_word(level: int, order: int, hanzi: str, *, publish: str | None = "es", audio: bool = True,
-              meaning: str | None = None, examples: int = 1, gloss: str | None = None) -> Word:
+              meaning: str | None = None, examples: int = 1, gloss: str | None = None, writing: bool = True) -> Word:
     word = Word.objects.create(hanzi=hanzi, pinyin=f"py{level}{order}", hsk_level=level, syllabus_order=order)
     if gloss:
         ThirdPartyGloss.objects.create(word=word, source="test", position=0, gloss=gloss)
     if publish:
         publish_word(word, publish, audio=audio, meaning=meaning, examples=examples)
+    if writing:
+        mark_writing(word)
     return word
+
+
+def mark_writing(word: Word, level: int | None = None):
+    """Pone los caracteres de una palabra en la lista de escritura (R-ESC-10), si aún no están."""
+    from content.models import Character
+    from content.services.reading import characters_of
+
+    for ch in characters_of(word.hanzi):
+        Character.objects.get_or_create(char=ch, defaults={"writing_level": level or word.hsk_level})
 
 
 def publish_word(word: Word, lang: str = "es", *, audio: bool = True, meaning: str | None = None, examples: int = 1):

@@ -260,11 +260,17 @@ class GenerationJob(models.Model):
 
 
 class Character(models.Model):
-    """Carácter con o sin datos de trazos (R-CON-12). Lo llena `load_characters` (08-contenido.md §2, paso 3).
-    Mientras un carácter no tenga fila, se ofrece en escritura: Hanzi Writer cubre todo HSK 1–6."""
+    """Carácter: datos de trazos (R-CON-12, `load_characters`) y nivel de escritura (R-ESC-10,
+    `load_writing_list`). Solo se pide en escritura si tiene `writing_level`."""
 
     char = models.CharField(max_length=1, primary_key=True)
     has_stroke_data = models.BooleanField(default=True)
+    writing_level = models.PositiveSmallIntegerField(
+        null=True, blank=True,
+        help_text="Nivel desde el que se pide escribirlo, según la lista de escritura del sílabo (R-ESC-10). "
+                  "Vacío: no se pide en escritura.",
+    )
+    writing_order = models.PositiveSmallIntegerField(null=True, blank=True, help_text="Posición en la lista de su nivel.")
 
     def __str__(self):
         return self.char

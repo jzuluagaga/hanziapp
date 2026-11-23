@@ -24,8 +24,7 @@
 | `historias/E<nn>-<nombre>.md` | ¿Qué debe hacer exactamente cada historia de V1? | Primera versión (35 historias, 160 criterios) |
 | `tools/verificar_docs.py` | ¿La documentación es coherente consigo misma? | Funciona |
 
-Dos informes anteriores sirven de antecedente y no se mantienen: `REVISION-ELICITACION.md` (auditoría técnica de las entregas del curso) y `EVALUACION-PRODUCTO.md` (evaluación de producto y mercado).
-
+Antecedentes que no se mantienen: `REVISION-ELICITACION.md` y `EVALUACION-PRODUCTO.md`.
 ## 2. Los Workshops son históricos
 
 Las entregas del curso de Ingeniería de Software II (`hanziapp/Workshop-1/`, `hanziapp/Workshop-2/`, los diagramas de clases, el modelo relacional, los BPMN, la arquitectura y los mockups) **quedan como documentos históricos**. Esta carpeta `docs/` los reemplaza como base para programar el producto.
@@ -137,13 +136,14 @@ Avisa, sin fallar, de las reglas que ninguna historia cita y de los archivos sin
 
 | Fecha | Cambio |
 |---|---|
-| 15 nov 2026 | Primera versión de `02`, `03` y `05`. |
-| 15 nov 2026 | Segunda revisión de `02`, `03` y `05` con las decisiones del fundador: día exento, guardado de escritura por carácter, diccionario gratuito, escucha con calendario propio, cortes V1a y V1b. |
+| 15 nov 2026 | Primera versión y segunda revisión de `02`, `03` y `05` con las decisiones del fundador: día exento, guardado de escritura por carácter, diccionario gratuito, escucha con calendario propio, cortes V1a y V1b. |
 | 15 nov 2026 | Primera versión de `04`, `06`, `07`, `08`, `09`, `00` y el verificador. Añadidas las propuestas `D-38` a `D-41`. |
+| 22 nov 2026 | Decisiones D-45 (Google en V1b), D-46 (registro enlazado) y D-47 (modo de escritura elegido); D-41 y D-44 firmes.|
 | 22 nov 2026 | Cerradas las decisiones que bloqueaban V1a. Sin "Ya la sé" (`D-42`) y mazos del sistema con tamaño creciente por nivel (`D-43`). Escritos `01`, `10` y las 35 historias de V1 en `historias/`. El frontend ya no guarda copias: la única fuente es `backend/Docs/`. |
 
 ## 10. Pendiente
 
-- Cerrar R-ESC-06 antes de V1b (`03-reglas-de-negocio.md`, sección 12).
+- Confirmar R-ESC-09 antes de V1b (`03-reglas-de-negocio.md`, sección 12).
+- Decidir cómo se dividen los mazos y qué caracteres se escriben en cada nivel antes de publicar (`08-contenido.md`, sección 7).
 - Elegir proveedor de síntesis de voz: sin audio no se puede publicar (`08-contenido.md`, sección 1).
 - Validación legal de lo marcado **LEGAL** en `03-reglas-de-negocio.md`.

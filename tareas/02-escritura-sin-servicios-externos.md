@@ -6,7 +6,7 @@
 
 - La escritura usa **Hanzi Writer 3.7.3** (`frontend/src/components/study/writing-card.tsx` y `frontend/src/components/word/stroke-animation.tsx`).
 - Hanzi Writer descarga los datos de trazos de cada carácter desde **jsDelivr**, un servidor externo. Si jsDelivr falla, no se puede escribir, y habría que nombrarlo en la política (R-DAT-11).
-- La tabla `content.Character` existe pero está vacía, porque falta el comando `load_characters` (`backend/Docs/08-contenido.md` §2, paso 3). Por eso hoy se ofrecen todos los caracteres, tengan o no datos de trazos (R-CON-12).
+- La lista de escritura del sílabo (700 caracteres, R-ESC-10) ya está cargada en `content.Character` (`writing_level`) con `load_writing_list`, y la cola de escritura solo pide esos caracteres. Lo que falta son los **datos de trazos**: el comando `load_characters` no existe (`backend/Docs/08-contenido.md` §2, paso 3). Por eso hoy se ofrecen todos los caracteres, tengan o no datos de trazos (R-CON-12).
 - Tampoco existe `check_level_ready` (08-contenido §5), ni un informe para ajustar el umbral de trazos errados (métrica M-10).
 
 ## Prompt
@@ -24,7 +24,8 @@ ANTES DE ESCRIBIR CÓDIGO, lee completos:
   paso 9 check_level_ready) y §5 (cuándo un nivel está listo)
 - backend/Docs/07-eventos-y-metricas.md: answer_recorded y M-10
 - backend/Docs/historias/E05-escribir-caracteres.md
-- Código: backend/content/models.py (Character), backend/content/services/reading.py
+- Código: backend/content/models.py (Character, con writing_level),
+  backend/content/management/commands/load_writing_list.py, backend/content/services/reading.py
   (characters_of, chars_without_strokes), backend/study/queue.py (cómo la cola omite
   caracteres sin trazos; SOLO LECTURA, no lo modifiques),
   backend/content/management/commands/ (imita el estilo de load_syllabus y
@@ -45,9 +46,9 @@ app, la tarea cambia.
 PASO 2. Comando load_characters (backend/content/management/commands/load_characters.py).
 - Recibe una carpeta local con los JSON de hanzi-writer-data (un archivo por carácter)
   y una o varias opciones --level.
-- Recorre los caracteres de las palabras vigentes de esos niveles (usa characters_of)
-  y, por cada uno, crea o actualiza content.Character con has_stroke_data según exista
-  su archivo.
+- Recorre los caracteres de la lista de escritura de esos niveles (Character con
+  writing_level) y actualiza has_stroke_data según exista su archivo. NUNCA modifiques
+  writing_level ni writing_order: los gestiona load_writing_list.
 - Copia SOLO los JSON de esos caracteres a frontend/public/strokes/<carácter>.json
   (con la opción --out, que por defecto apunta ahí). Así no se sube el paquete entero.
 - Es repetible: una segunda ejecución no cambia nada si nada cambió. Imprime cuántos
@@ -75,7 +76,7 @@ PASO 4. Comando check_level_ready (backend/content/management/commands/check_lev
   * versiones publicadas sin revisor (published_by vacío) o con validaciones fallidas:
     la consulta de Q-23, que debe dar 0
   * palabras publicadas sin audio de la palabra o de alguno de sus ejemplos
-  * caracteres del nivel sin datos de trazos
+  * caracteres de la lista de escritura del nivel sin datos de trazos
 - Termina con "LISTO" y código de salida 0, o "NO LISTO" y código 1, con la lista de lo
   que falta (máximo 20 por categoría y el total).
 - Solo lectura: no modifica nada.

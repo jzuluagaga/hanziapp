@@ -24,7 +24,7 @@ ANTES DE ESCRIBIR CÓDIGO, lee completos:
 - backend/Docs/00-indice.md (formato de historias y cuándo una historia está lista)
 - backend/Docs/03-reglas-de-negocio.md: R-CTA-05, R-CTA-06, R-CTA-07, R-CTA-10,
   R-DAT-01, R-DAT-02, R-DAT-11
-- backend/Docs/04-decisiones.md: D-05 y D-31
+- backend/Docs/04-decisiones.md: D-05, D-31 y D-45
 - backend/Docs/10-api.md (sobre todo §2: Next guarda las credenciales en cookies httpOnly)
 - backend/Docs/historias/E02-crear-cuenta-y-empezar.md (imita su formato exacto)
 - Código: backend/users/views.py (GoogleAuthView, RegisterView), backend/users/services.py
@@ -34,9 +34,8 @@ ANTES DE ESCRIBIR CÓDIGO, lee completos:
 - frontend/node_modules/next/dist/docs/ antes de tocar rutas de Next.
 
 PASO 1. Documentación (sin código todavía).
-a) En backend/Docs/05-mapa-de-historias.md cambia la versión de HU-E02-03 de V2 a V1b, y
-   en backend/Docs/04-decisiones.md añade la decisión D-45: "Se adelanta el acceso con
-   Google a V1b", con estado Propuesta y un porqué de una línea.
+a) La decisión ya está tomada (D-45 en backend/Docs/04-decisiones.md). En
+   backend/Docs/05-mapa-de-historias.md cambia la versión de HU-E02-03 de V2 a V1b.
 b) Detalla HU-E02-03 en backend/Docs/historias/E02-crear-cuenta-y-empezar.md con el mismo
    formato que HU-E02-01: Como/quiero/para; Corte, Tipo, Reglas y Necesita; tabla de
    criterios "Dado… cuando… entonces…", cada uno con una prueba de nombre único; y las

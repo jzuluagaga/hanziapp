@@ -106,6 +106,7 @@ Un mazo se mide en **palabras**. No existen "listas" ni "carpetas" que contengan
 | Con guía | `mode = guided` | Práctica con el contorno del carácter visible. No cambia el calendario | modo fácil, easy |
 | De memoria | `mode = recall` | Escritura sin contorno. Es la única que cambia el calendario (`R-ESC-02`) | modo difícil, hard, quiz |
 | Trazo errado | `stroke_miss` | Intento de trazo que el reconocedor rechaza | error |
+| Lista de escritura | `writing_list` / `character.writing_level` | Caracteres que el sílabo pide saber escribir (书写字), con el nivel desde el que se piden. Es mucho más corta que la de lectura (`R-ESC-10`) | — |
 | Pista | `hint` | Mostrar el trazo siguiente, pedida por el estudiante o automática | ayuda |
 
 ## 7. Progreso y hábito

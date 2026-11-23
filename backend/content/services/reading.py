@@ -34,6 +34,11 @@ def characters_of(hanzi: str) -> list[str]:
     return seen
 
 
+def writing_levels(chars) -> dict[str, int]:
+    """Nivel desde el que se pide escribir cada carácter (R-ESC-10). Los que no están en la lista no aparecen."""
+    return dict(Character.objects.filter(char__in=list(chars), writing_level__isnull=False).values_list("char", "writing_level"))
+
+
 def chars_without_strokes(chars) -> set[str]:
     return set(Character.objects.filter(char__in=list(chars), has_stroke_data=False).values_list("char", flat=True))
 

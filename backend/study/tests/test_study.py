@@ -318,7 +318,7 @@ class E05Writing(Base):
 
     def test_e05_01_chars_without_strokes_skipped(self):
         first = self.words[1][0]
-        Character.objects.create(char=first.hanzi, has_stroke_data=False)
+        Character.objects.filter(char=first.hanzi).update(has_stroke_data=False)
         from study.queue import candidates
 
         with at(DAY1):
@@ -352,6 +352,18 @@ class E05Writing(Base):
         with at(DAY1):
             s = self.started("writing", deck_id=deck.pk)
         self.assertEqual([c["unit"] for c in s["cards"]], ["大", "人", "口"])
+
+    def test_e05_02_only_writing_list_characters(self):
+        listed = make_word(1, 700, "山水", writing=False)
+        Character.objects.update_or_create(char="山", defaults={"writing_level": 1})
+        Character.objects.update_or_create(char="水", defaults={"writing_level": 3})  # se pide desde HSK 3
+        unlisted = make_word(1, 701, "龟", writing=False)  # no está en la lista de escritura
+        deck = Deck.objects.create(kind="system", hsk_level=1, index=70)
+        deck.entries.create(word=listed, position=0)
+        deck.entries.create(word=unlisted, position=1)
+        with at(DAY1):
+            s = self.started("writing", deck_id=deck.pk)
+        self.assertEqual([c["unit"] for c in s["cards"]], ["山"])
 
     def test_e05_03_hint_means_fail(self):
         with at(DAY1):

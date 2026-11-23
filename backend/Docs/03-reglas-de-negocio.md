@@ -41,7 +41,7 @@
 | R-CTA-07 | El acceso con Google se vincula a una cuenta existente solo si el correo coincide y Google lo declara verificado. Un correo que llega verificado por Google queda verificado. |
 | R-CTA-08 | Tras `login_max_failures` intentos fallidos en `login_window_min` minutos, el acceso a esa cuenta se bloquea `login_lock_min` minutos. El mensaje no revela si el correo existe. |
 | R-CTA-09 | Una cuenta suspendida no puede acceder. Sus datos se conservan y la suspensión no borra progreso ni cancela concesiones. Solo el *dueño* suspende y reactiva, con motivo registrado. |
-| R-CTA-10 | En V1 el registro está abierto pero no enlazado: se llega por una dirección no publicada y las páginas piden a los buscadores no indexarlas. No hay códigos de invitación. La dirección puede llevar un código de *cohorte*, que se guarda en la cuenta y acompaña a sus eventos para saber de qué clase viene. El interruptor `signup_mode` (`open` o `closed`) cierra el registro sin desplegar. **CONFIRMADO**. |
+| R-CTA-10 | El registro está abierto y enlazado desde la página de inicio (D-46); la página de registro pide a los buscadores no indexarla. No hay códigos de invitación. La dirección puede llevar un código de *cohorte*, que se guarda en la cuenta y acompaña a sus eventos para saber de qué clase viene. El interruptor `signup_mode` (`open` o `closed`) cierra el registro sin desplegar. **CONFIRMADO**. |
 
 ## 2. Idioma
 
@@ -100,7 +100,7 @@
 | ID | Regla |
 |---|---|
 | R-MAZ-01 | Un *mazo* es del sistema o propio. No hay otros tipos ni contenedores de mazos. |
-| R-MAZ-02 | Los *mazos del sistema* son de solo lectura. Cada palabra vigente del sílabo está en exactamente un mazo del sistema, que pertenece a su nivel. Cada nivel se divide en mazos de `system_deck_size` palabras consecutivas en el orden del sílabo, con un tamaño propio por nivel que crece con el nivel (D-43); el último mazo del nivel se queda con el resto. **CONFIRMADO**. |
+| R-MAZ-02 | Los *mazos del sistema* son de solo lectura. Cada palabra vigente del sílabo está en exactamente un mazo del sistema, que pertenece a su nivel. Cada nivel se divide en mazos de `system_deck_size` palabras consecutivas en el orden del sílabo, con un tamaño propio por nivel que crece con el nivel (D-43); el último mazo del nivel se queda con el resto. **CONFIRMADO**. Pasará a mazos por tema cuando esté construida la asignación de temas (D-49). |
 | R-MAZ-03 | Un *mazo propio* pertenece a un estudiante y solo él lo ve. Su nombre tiene de 1 a 60 caracteres y no se repite entre sus mazos, sin distinguir mayúsculas. |
 | R-MAZ-04 | Un mazo propio contiene solo palabras del diccionario. Una palabra aparece una vez por mazo y puede estar en varios. Admite hasta `own_deck_max_words` palabras. |
 | R-MAZ-05 | El número de mazos propios que un estudiante tiene a la vez no supera su *límite* (`R-DER-05`). Se cuentan los mazos existentes, no los creados históricamente. **SUPUESTO ABIERTO** (interpretación de "hasta 10 mazos"). |
@@ -135,9 +135,11 @@
 | R-ESC-03 | En modo de memoria la calificación la decide el sistema, no el estudiante: **Recordé** si completó el carácter sin *pista* y con `writing_max_stroke_misses` *trazos errados* o menos; **No recordé** en cualquier otro caso. |
 | R-ESC-04 | Cambiar `writing_max_stroke_misses` rige desde ese momento; no recalcula respuestas pasadas. Cada respuesta guarda el número de trazos errados, si hubo pista y el umbral vigente, para poder ajustarlo con datos. |
 | R-ESC-05 | Un *trazo errado* es un intento que el reconocedor rechaza. Tras `auto_hint_after_misses` trazos errados seguidos en el mismo trazo, se muestra una pista automática, que cuenta como pista. |
-| R-ESC-06 | Un carácter nuevo se presenta primero con guía, sin calificación, y enseguida de memoria; esa respuesta de memoria es su primera calificación. **SUPUESTO ABIERTO**. |
+| R-ESC-06 | El estudiante elige el modo de cada sesión de escritura: *con guía* o *de memoria* (D-47). La sesión con guía es práctica: se registra, no cambia estados de repaso, no consume el límite de nuevas ni hace el día activo (R-ESC-02, R-PRO-03). **CONFIRMADO**. |
 | R-ESC-07 | La unidad de guardado en escritura es el carácter. Un carácter respondido nunca se vuelve a pedir en esa sesión, salvo como refuerzo. Si el estudiante sale a mitad de un carácter, ese carácter se reinicia limpio al volver y el intento parcial no cuenta. **CONFIRMADO**. |
 | R-ESC-08 | Si un carácter aparece en varias palabras de la misma cola, se pide una sola vez. |
+| R-ESC-10 | Solo se piden en escritura los caracteres de la *lista de escritura* del sílabo, cada uno desde su nivel; la lista común de HSK 1 y 2 se reparte en 50 caracteres para HSK 1 y 50 para HSK 2 (D-48). En un mazo de nivel N entran los de nivel N o inferior; en *todos los pendientes*, los de los niveles que el plan permite, en el orden de la lista. Un carácter fuera de la lista se puede practicar con guía desde la ficha, pero no tiene calendario ni cuenta en el progreso (D-48). **CONFIRMADO**. |
+| R-ESC-09 | En una sesión de memoria, un carácter nuevo se presenta primero con guía, sin calificación, y enseguida de memoria; esa respuesta de memoria es su primera calificación. **PROPUESTA**. |
 
 ## 7. Sesiones, guardado y reanudación
 
@@ -260,7 +262,8 @@ Tras las decisiones del fundador del 15 y el 22 nov 2026. "Bloquea" indica el pr
 | R-REP-05 | Solo la primera respuesta del día cambia el estado; lo demás es refuerzo | Confirmado | — |
 | R-SES-12 | "Estudiar hoy" encadena sesiones de una habilidad | Confirmado | — |
 | R-PRO-01 | El día empieza a las 4:00 a. m. | Confirmado | — |
-| R-ESC-06 | Carácter nuevo: primero con guía, luego de memoria | **Abierto** | V1b |
+| R-ESC-06 | El estudiante elige con guía o de memoria (D-47) | Confirmado | — |
+| R-ESC-09 | En memoria, el carácter nuevo pasa antes por la guía | **Propuesta por confirmar** | V1b |
 | R-CTA-04 | El progreso de invitado se descarta al acceder a una cuenta existente | **Abierto** | V2 |
 | R-MAZ-05 | "10 mazos" son mazos propios existentes a la vez | **Abierto** | V2 |
 | R-DER-07 | Bajar de plan no borra; solo impide crear | **Abierto** | V2 |

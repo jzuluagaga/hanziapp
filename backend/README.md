@@ -8,6 +8,7 @@ API de Django para HanziApp. La documentación de producto vive en `Docs/` (empi
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py build_system_decks      # mazos del sistema (R-MAZ-02, D-43); repetible
+python manage.py load_writing_list       # lista de escritura del sílabo (R-ESC-10); repetible
 python manage.py runserver               # API en http://127.0.0.1:8000/api/v1/
 python manage.py test                    # todas las pruebas
 python3 Docs/tools/verificar_docs.py --tests .,../frontend   # documentación y pruebas citadas

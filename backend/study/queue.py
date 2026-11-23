@@ -12,7 +12,9 @@ from dataclasses import dataclass, field
 from datetime import date
 
 from content.models import Word
-from content.services.reading import chars_without_strokes, characters_of, published_word_ids, words_with_audio
+from content.services.reading import (
+    chars_without_strokes, characters_of, published_word_ids, words_with_audio, writing_levels,
+)
 from decks.services import deck_word_ids, system_word_ids
 from entitlements.services import allowed_levels
 from ops import params
@@ -78,6 +80,10 @@ def candidates(account, skill: str, deck=None, today: date | None = None, apply_
         hanzi = dict(Word.objects.filter(pk__in=ids).values_list("pk", "hanzi"))
         chars_by_word = {w: characters_of(hanzi.get(w, "")) for w in ids}
         all_chars = {ch for lst in chars_by_word.values() for ch in lst}
+        # R-ESC-10: solo los caracteres de la lista de escritura, desde su nivel y dentro del plan.
+        wl = writing_levels(all_chars)
+        allowed = set(allowed_levels(account))
+        cap = deck.hsk_level if deck is not None and deck.kind == "system" else max(allowed, default=0)
         missing = chars_without_strokes(all_chars)
         states = states_for(account, "writing", all_chars)
         seen: set[str] = set()
@@ -86,8 +92,9 @@ def candidates(account, skill: str, deck=None, today: date | None = None, apply_
                 c.in_review += 1
                 continue
             for ch in chars_by_word[w]:
-                if ch in seen:
-                    continue  # R-ESC-08
+                level = wl.get(ch)
+                if ch in seen or level is None or level > cap or level not in allowed:
+                    continue  # R-ESC-08 (una vez por cola) y R-ESC-10
                 seen.add(ch)
                 if ch in missing:
                     c.no_strokes += 1  # R-CON-12
@@ -119,6 +126,10 @@ def candidates(account, skill: str, deck=None, today: date | None = None, apply_
 
     due.sort(key=lambda x: x[0])  # estable: a igual atraso, el orden del mazo
     c.due = [spec for _, spec in due]
+    if skill == "writing" and deck is None:
+        # En «todos los pendientes», los caracteres nuevos siguen los niveles de la lista de escritura.
+        order = {spec.unit_key: i for i, spec in enumerate(fresh)}
+        fresh.sort(key=lambda spec: (wl.get(spec.unit_key, 99), order[spec.unit_key]))
     c.fresh_before_limit = len(fresh)
     limit = new_limit(account, skill)
     if apply_limit and limit is not None:

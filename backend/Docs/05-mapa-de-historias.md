@@ -94,7 +94,7 @@ Lo que debe existir antes de la primera pantalla para no pagar deuda después.
 | ID | Tipo | Historia | Resultado | Versión | Reglas |
 |---|---|---|---|---|---|
 | HU-E05-01 | U | Practicar con guía | Trazo un carácter siguiendo su contorno, sin que cuente | V1b | R-ESC-02, R-ESC-06, R-CON-12 |
-| HU-E05-02 | U | Escribir de memoria | Trazo sin ayuda y el sistema decide si recordé | V1b | R-ESC-01, R-ESC-03, R-ESC-04, R-ESC-08 |
+| HU-E05-02 | U | Escribir de memoria | Trazo sin ayuda y el sistema decide si recordé | V1b | R-ESC-01, R-ESC-03, R-ESC-04, R-ESC-08, R-ESC-09, R-ESC-10 |
 | HU-E05-03 | U | Pedir una pista | Me desatasco sabiendo que la pista cuenta | V1b | R-ESC-05 |
 
 ### E06 · No perder nada
@@ -255,4 +255,4 @@ Antes de construir cualquiera de las tres, hay que confirmar qué pasarelas oper
 ## 8. Pendientes de este mapa
 
 - **HU-E09-05** no tiene regla todavía: falta definir cómo se arma y se puntúa la prueba de aprendizaje.
-- Los supuestos que bloqueaban V1a se cerraron el 22 nov 2026 (`04-decisiones.md`, sección 8). Queda abierto R-ESC-06, que bloquea V1b.
+- Los supuestos que bloqueaban V1a se cerraron el 22 nov 2026 (`04-decisiones.md`, sección 8). Queda por confirmar R-ESC-09, que afecta a V1b.

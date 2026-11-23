@@ -12,7 +12,7 @@
 |---|---|---|
 | 1 | Dado una respuesta con guía, cuando se guarda, entonces queda registrada y no cambia el estado de repaso, el límite de nuevas ni el día activo | `test_e05_01_guided_does_not_change_state` |
 | 2 | Dado caracteres sin datos de trazos, cuando se arma la cola de escritura, entonces se omiten y se informa cuántos | `test_e05_01_chars_without_strokes_skipped` |
-| 3 | Dado un carácter nuevo, cuando aparece, entonces se presenta primero con guía, sin calificación, y enseguida de memoria | `e2e_e05_01_new_char_guided_then_recall` |
+| 3 | Dado que va a estudiar escritura, cuando inicia la sesión, entonces elige con guía o de memoria, y la sesión con guía no cambia su calendario ni su racha | `e2e_e05_01_choose_guided_or_recall` |
 
 - **Derechos:** solo caracteres de palabras de niveles permitidos.
 - **Idioma:** la palabra de contexto muestra su significado en el idioma de estudio.
@@ -23,7 +23,7 @@
 
 ### HU-E05-02 · Escribir de memoria
 **Como** estudiante **quiero** trazar sin ayuda y que el sistema decida si recordé **para** no calificarme con indulgencia.
-**Corte:** V1b · **Tipo:** U · **Reglas:** R-ESC-01, R-ESC-03, R-ESC-04, R-ESC-08 · **Necesita:** HU-E05-01
+**Corte:** V1b · **Tipo:** U · **Reglas:** R-ESC-01, R-ESC-03, R-ESC-04, R-ESC-08, R-ESC-09, R-ESC-10 · **Necesita:** HU-E05-01
 
 | # | Criterio de aceptación | Prueba |
 |---|---|---|
@@ -31,6 +31,8 @@
 | 2 | Dado una respuesta de memoria, cuando se guarda, entonces conserva los trazos errados, si hubo pista y el umbral vigente | `test_e05_02_answer_stores_threshold` |
 | 3 | Dado un carácter que aparece en varias palabras de la cola, cuando se arma, entonces se pide una sola vez | `test_e05_02_char_asked_once_per_queue` |
 | 4 | Dado que sale a mitad de un carácter, cuando vuelve, entonces ese carácter empieza limpio y el intento parcial no cuenta | `e2e_resume_exact_writing` |
+| 5 | Dado un carácter nuevo en una sesión de memoria, cuando aparece, entonces se presenta primero con guía, sin calificación, y enseguida de memoria | `e2e_e05_01_new_char_guided_then_recall` |
+| 6 | Dado un mazo de un nivel, cuando se arma la cola de escritura, entonces solo entran caracteres de la lista de escritura de ese nivel o inferiores | `test_e05_02_only_writing_list_characters` |
 
 - **Derechos:** solo niveles permitidos.
 - **Idioma:** claves `writing.*`.
